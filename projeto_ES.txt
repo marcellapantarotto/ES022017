@@ -1,0 +1,17 @@
+Nosso cliente é um gamer da faixa etária de entre 15 a 35 anos. É alguém não disposto
+a gastar tanto dinheiro com video games. Dada a grande variedade de games, será necessário
+um filtro para encontrar e escolher games de seu interesse.
+
+*Tarefa:
+	-Procurar e jogar games.
+	-Se informar sobre o jogo.
+	
+*Dor:
+	-Decidir entre vários jogos.
+	-Risco de comprar um jogo não adequado a seu perfil.
+	
+*Ganho:
+	-Possuir maior segurança ao adquirir um game.
+	-Desperdiçar menos dinheiro com games que não iriam ser jogados.
+	-Social.
+	-Conhecer pessoas com interesses em video games similares.
