@@ -1,6 +1,11 @@
+NOME DA FUNCIONALIDADE: 
+COMO (COMO STAKEHOLDER): 
+EU QUERO (REALIZAR ATIVIDADE): 
+PARA (ATINGIR UM OBJETIVO): 
+
 NOME DA FUNCIONALIDADE: visita para leitura
 COMO (COMO STAKEHOLDER): usuário anônimo
-EU QUERO (REALIZAR ATIVIDADE): ler um review
+EU QUERO (REALIZAR ATIVIDADE): entrar na pagina principal ler um review
 PARA (ATINGIR UM OBJETIVO): me informar sobre jogos
 
 NOME DA FUNCIONALIDADE: autenticação *******************************
@@ -8,7 +13,7 @@ COMO (COMO STAKEHOLDER): usuário
 EU QUERO (REALIZAR ATIVIDADE): fazer login e senha
 PARA (ATINGIR UM OBJETIVO): escrever um review
 
-NOME DA FUNCIONALIDADE: escrever review
+NOME DA FUNCIONALIDADE: escrever review / submeter para analise
 COMO (COMO STAKEHOLDER): usuário
 EU QUERO (REALIZAR ATIVIDADE): escrever review
 PARA (ATINGIR UM OBJETIVO): avaliar um jogo
@@ -18,7 +23,12 @@ COMO (COMO STAKEHOLDER): administrador
 EU QUERO (REALIZAR ATIVIDADE): adicionar um jogo
 PARA (ATINGIR UM OBJETIVO): para usuários avaliarem
 
-NOME DA FUNCIONALIDADE: aprovar review
+listar
+
+selecionar
+
+
+NOME DA FUNCIONALIDADE: aprovar/negar review
 COMO (COMO STAKEHOLDER): administrador
 EU QUERO (REALIZAR ATIVIDADE): curadoria do review
 PARA (ATINGIR UM OBJETIVO): manter ordem e qualidade do site / manter conteúdo coeso
@@ -77,3 +87,18 @@ NOME DA FUNCIONALIDADE: deslogar
 COMO (COMO STAKEHOLDER): usuário logado
 EU QUERO (REALIZAR ATIVIDADE): deslogar do site
 PARA (ATINGIR UM OBJETIVO): ir embora
+
+NOME DA FUNCIONALIDADE: editar review
+COMO (COMO STAKEHOLDER): cadastrado
+EU QUERO (REALIZAR ATIVIDADE): editar um review que eu já tenha escrito
+PARA (ATINGIR UM OBJETIVO): realizar edições
+
+NOME DA FUNCIONALIDADE: aprovar review editado
+COMO (COMO STAKEHOLDER): administrador
+EU QUERO (REALIZAR ATIVIDADE): aprovar uma edição de review / curadoria de edição
+PARA (ATINGIR UM OBJETIVO): manter ordem e qualidade do site / manter conteúdo coeso
+
+NOME DA FUNCIONALIDADE: votar
+COMO (COMO STAKEHOLDER): cadastrado
+EU QUERO (REALIZAR ATIVIDADE): avaliar positivamente ou negativamente um review
+PARA (ATINGIR UM OBJETIVO): destacar reviews boas ou ruins
