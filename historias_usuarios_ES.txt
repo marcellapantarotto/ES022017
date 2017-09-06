@@ -4,24 +4,24 @@ EU QUERO (REALIZAR ATIVIDADE):
 PARA (ATINGIR UM OBJETIVO): 
 
 NOME DA FUNCIONALIDADE: visita para leitura
-COMO (COMO STAKEHOLDER): usu�rio an�nimo
+COMO (COMO STAKEHOLDER): usuário anônimo
 EU QUERO (REALIZAR ATIVIDADE): entrar na pagina principal ler um review
 PARA (ATINGIR UM OBJETIVO): me informar sobre jogos
 
-NOME DA FUNCIONALIDADE: autentica��o *******************************
-COMO (COMO STAKEHOLDER): usu�rio
+NOME DA FUNCIONALIDADE: autenticação *******************************
+COMO (COMO STAKEHOLDER): usuário
 EU QUERO (REALIZAR ATIVIDADE): fazer login e senha
 PARA (ATINGIR UM OBJETIVO): escrever um review
 
 NOME DA FUNCIONALIDADE: escrever review / submeter para analise
-COMO (COMO STAKEHOLDER): usu�rio
+COMO (COMO STAKEHOLDER): usuário
 EU QUERO (REALIZAR ATIVIDADE): escrever review
 PARA (ATINGIR UM OBJETIVO): avaliar um jogo
 
 PARA (ATINGIR UM OBJETIVO): adicionar jogo
 COMO (COMO STAKEHOLDER): administrador
 EU QUERO (REALIZAR ATIVIDADE): adicionar um jogo
-PARA (ATINGIR UM OBJETIVO): para usu�rios avaliarem
+PARA (ATINGIR UM OBJETIVO): para usuários avaliarem
 
 listar
 
@@ -31,74 +31,96 @@ selecionar
 NOME DA FUNCIONALIDADE: aprovar/negar review
 COMO (COMO STAKEHOLDER): administrador
 EU QUERO (REALIZAR ATIVIDADE): curadoria do review
-PARA (ATINGIR UM OBJETIVO): manter ordem e qualidade do site / manter conte�do coeso
+PARA (ATINGIR UM OBJETIVO): manter ordem e qualidade do site / manter conteúdo coeso
 
-NOME DA FUNCIONALIDADE: banir usu�rio
+NOME DA FUNCIONALIDADE: banir usuário
 COMO (COMO STAKEHOLDER): administrador
-EU QUERO (REALIZAR ATIVIDADE): banir usu�rio
-PARA (ATINGIR UM OBJETIVO): evitar mau comportamento
+EU QUERO (REALIZAR ATIVIDADE): banir usuário que fez algo que atrapalhe o bom andamento da plataforma(ofensa a outros usuário, comentários não relacionados ao assunto, etc)
+PARA (ATINGIR UM OBJETIVO): evitar mau comportamento e garantir o bom andamento da plataforma
 
 NOME DA FUNCIONALIDADE: cadastro
-COMO (COMO STAKEHOLDER): usu�rio an�nimo
-EU QUERO (REALIZAR ATIVIDADE): me cadastrar
-PARA (ATINGIR UM OBJETIVO): usufruir das funcionalidade de cadastrado
+COMO (COMO STAKEHOLDER): usuário anônimo
+EU QUERO (REALIZAR ATIVIDADE): criar um cadastro pra poder fazer o login na plataforma
+PARA (ATINGIR UM OBJETIVO): usufruir das funcionalidade de cadastro
 
 NOME DA FUNCIONALIDADE: recuperar senha
-COMO (COMO STAKEHOLDER): usu�rio
-EU QUERO (REALIZAR ATIVIDADE): gerar nova senha
-PARA (ATINGIR UM OBJETIVO): recuperar minha conta / acessar site
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): gerar uma nova senha, pois esqueci/quero mudar a anterior
+PARA (ATINGIR UM OBJETIVO): recuperar minha conta para acessar o site
 
 NOME DA FUNCIONALIDADE: editar perfil
-COMO (COMO STAKEHOLDER): cadastrado (usu�rio/administrador)
-EU QUERO (REALIZAR ATIVIDADE): mudar meu dados de perfil
+COMO (COMO STAKEHOLDER): usuário/administrador já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): mudar a descrição do meu perfil
 PARA (ATINGIR UM OBJETIVO): atualizar meus dados
 
-NOME DA FUNCIONALIDADE: mandar mensagem
-COMO (COMO STAKEHOLDER): cadastrado
-EU QUERO (REALIZAR ATIVIDADE): poder mandar mensagens
-PARA (ATINGIR UM OBJETIVO): me comunicar com outros cadastrados
+NOME DA FUNCIONALIDADE: editar perfil
+COMO (COMO STAKEHOLDER): usuário/administrador já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): mudar a foto do meu perfil
+PARA (ATINGIR UM OBJETIVO): atualizar meus dados
 
-NOME DA FUNCIONALIDADE: solicitar exclus�o da conta
-COMO (COMO STAKEHOLDER): cadastrado
-EU QUERO (REALIZAR ATIVIDADE): pedir dele��o da minha conta
-PARA (ATINGIR UM OBJETIVO): n�o participar mais do site
+
+NOME DA FUNCIONALIDADE: mandar mensagem
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): mandar uma mensagem privada para outro usuário
+PARA (ATINGIR UM OBJETIVO): me comunicar com outro cadastrado
+
+
+NOME DA FUNCIONALIDADE: solicitar exclusão da conta
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): pedir a deleção da minha conta
+PARA (ATINGIR UM OBJETIVO): não participar mais do site
 
 NOME DA FUNCIONALIDADE: excluir perfil
 COMO (COMO STAKEHOLDER): administrador
-EU QUERO (REALIZAR ATIVIDADE): poder excluir uma conta
-PARA (ATINGIR UM OBJETIVO): atender uma solicita��o de exclus�o
+EU QUERO (REALIZAR ATIVIDADE): poder excluir uma conta de algum usuário cadastrado
+PARA (ATINGIR UM OBJETIVO): atender a solicitação de exclusão do próprio usuário
 
 NOME DA FUNCIONALIDADE: adicionar jogo aos favoritos
-COMO (COMO STAKEHOLDER): usu�rio
-EU QUERO (REALIZAR ATIVIDADE): adicionar jogo a minha lista de favoritos
-PARA (ATINGIR UM OBJETIVO): manter uma organiza��o dos meus jogos favoritos
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): adicionar um jogo a minha lista de favoritos
+PARA (ATINGIR UM OBJETIVO): manter uma organização dos meus jogos favoritos
 
 NOME DA FUNCIONALIDADE: excluir review
-COMO (COMO STAKEHOLDER): cadastrado
-EU QUERO (REALIZAR ATIVIDADE): excluir meu review
-PARA (ATINGIR UM OBJETIVO): n�o ter mais review
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): excluir um review que fiz
+PARA (ATINGIR UM OBJETIVO): não ter mais o meu review na plataforma
 
-NOME DA FUNCIONALIDADE: sugerir adi��o de jogo ao banco
-COMO (COMO STAKEHOLDER): usu�rio
-EU QUERO (REALIZAR ATIVIDADE): sugerir ao administrador um jogo 
-PARA (ATINGIR UM OBJETIVO): ser adicionado ao site
+NOME DA FUNCIONALIDADE: sugerir adição de jogo ao banco
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): sugerir ao administrador um jogo para ser adicionado à plataforma 
+PARA (ATINGIR UM OBJETIVO): para que possa ser feito reviews sobre este jogo específico
 
 NOME DA FUNCIONALIDADE: deslogar
-COMO (COMO STAKEHOLDER): usu�rio logado
+COMO (COMO STAKEHOLDER): usuário já cadastrado e logado
 EU QUERO (REALIZAR ATIVIDADE): deslogar do site
 PARA (ATINGIR UM OBJETIVO): ir embora
 
 NOME DA FUNCIONALIDADE: editar review
-COMO (COMO STAKEHOLDER): cadastrado
-EU QUERO (REALIZAR ATIVIDADE): editar um review que eu j� tenha escrito
-PARA (ATINGIR UM OBJETIVO): realizar edi��es
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): editar um review que eu já tenha escrito sobre um jogo específico
+PARA (ATINGIR UM OBJETIVO): corrigir/retirar/adicionar alguma informação ou corrigir um erro de português
 
 NOME DA FUNCIONALIDADE: aprovar review editado
 COMO (COMO STAKEHOLDER): administrador
-EU QUERO (REALIZAR ATIVIDADE): aprovar uma edi��o de review / curadoria de edi��o
-PARA (ATINGIR UM OBJETIVO): manter ordem e qualidade do site / manter conte�do coeso
+EU QUERO (REALIZAR ATIVIDADE): aprovar uma edição de review / curadoria de edição
+PARA (ATINGIR UM OBJETIVO): manter ordem e qualidade do site / manter conteúdo coeso
 
 NOME DA FUNCIONALIDADE: votar
-COMO (COMO STAKEHOLDER): cadastrado
-EU QUERO (REALIZAR ATIVIDADE): avaliar positivamente ou negativamente um review
-PARA (ATINGIR UM OBJETIVO): destacar reviews boas ou ruins
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): avaliar positivamente ou negativamente um review que outro usuário fez
+PARA (ATINGIR UM OBJETIVO): indicar minha opinião sobre e  destacar reviews boas ou ruins
+
+NOME DA FUNCIONALIDADE: denunciar usuário
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): denunciar um outro usuário que infringiu alguma regra da plataforma(ofensa a outro usuário, etc)
+PARA (ATINGIR UM OBJETIVO): manter o bom funcionamento da plataforma e uma relação respeitável entre os membros
+
+NOME DA FUNCIONALIDADE: alterar email
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): alterar meu endereço de email cadastrado na plataforma
+PARA (ATINGIR UM OBJETIVO): manter meus dados atualizados
+
+NOME DA FUNCIONALIDADE: alterar notificações
+COMO (COMO STAKEHOLDER): usuário já cadastrado
+EU QUERO (REALIZAR ATIVIDADE): alterar as condições de notificação da plataforma
+PARA (ATINGIR UM OBJETIVO): desejo/não desejo receber notificações sobre novos reviews de algum jogo que esteja nos meu favoritos
