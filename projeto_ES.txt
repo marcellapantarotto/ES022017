@@ -5,13 +5,16 @@ um filtro para encontrar e escolher games de seu interesse.
 *Tarefa:
 	-Procurar e jogar games.
 	-Se informar sobre o jogo.
-	
+
 *Dor:
 	-Decidir entre vários jogos.
 	-Risco de comprar um jogo não adequado a seu perfil.
-	
+
 *Ganho:
 	-Possuir maior segurança ao adquirir um game.
 	-Desperdiçar menos dinheiro com games que não iriam ser jogados.
 	-Social.
 	-Conhecer pessoas com interesses em video games similares.
+
+	cada jogo terá uma pequena descrição sobre o jogo, possibilidade de link para a página do jogo.
+	moderador vai adicionar todos os jogos, mas usuários podem sugerir novos jogos.
