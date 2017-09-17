@@ -1,0 +1,127 @@
+Cenários
+
+Feature: User can manually add movie 2
+3 Scenario: Add a movie
+4 Given I am on the RottenPotatoes home page
+5 When I follow "Add new movie"
+6 Then I should be on the Create New Movie page
+7 When I fill in "Title" with "Men In Black"
+8 And I select "PG-13" from "Rating"
+9 And I press "Save Changes"
+10 Then I should be on the RottenPotatoes home page
+11 And I should see "Men In Black"
+
+
+Feature: Usuário anônimo pode entrar na home page para ler reviews
+ Scenario: Ler reviews
+ Given I am on the home page
+ Então eu deveria conseguir scrollar pela página e ter acesso aos reviews
+
+Feature: Autenticação
+ Scenario: Realizar login
+ Given I am on the home page
+ Quando eu 
+ Então eu
+ 
+Feature: Usuário cadastrado pode escrever review e submeter para análise
+ Scenario: Escrever review
+ Given I am on the main page
+ Quando eu 
+ Então eu
+
+Feature: Administrador pode add jogo
+ Scenario: Add jogo
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Administrador pode aprovar review
+ Scenario: Aprovar review
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Administrador pode negar review
+ Scenario: Negar review
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Administrador pode banir usuário
+ Scenario: Banir usuário
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário anônimo pode se cadastrar
+ Scenario: Realizar cadastro
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário cadastrado pode requisitar recuperação de senha
+ Scenario: Recuperar senha
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário cadastrado ou Administrador pode editar perfil
+ Scenario: Editar perfil
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário cadastrado pode enviar mensagem a outros usuários cadastrados
+ Scenario: Enviar mensagem
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário cadastrado pode solicitar exclusão da conta
+ Scenario: Solicitar exclusão
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário cadastrado pode excluir review que escreveu
+ Scenario: Excluir review
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário cadastrado pode sugerir adição de jogo ao catálogo
+ Scenario: Sugestão de jogo
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário cadastrado pode realizar logoff
+ Scenario: Logoff
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário cadastrado pode editar review que escreveu
+ Scenario: Editar review
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Administrador pode deletar review
+ Scenario: 
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário cadastrado pode dar upvote em uma review
+ Scenario: Upvote
+ Given I am on the main page
+ Quando eu 
+ Então eu
+  
+Feature: Usuário cadastrado pode dar downvote em uma review
+ Scenario: Downvote
+ Given I am on the main page
+ Quando eu 
+ Então eu
+ 
