@@ -1,0 +1,5 @@
+subir vm no google (1)
+configurar proxy reverso (3)
+bancoo de dados (mongodb) (3)
+firewall (2)
+systemd unitfiles (5)
