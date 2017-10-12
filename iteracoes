@@ -26,3 +26,9 @@ Desenvolvimento dos protótipos Lo-FI UI.
  - cadastro : onde usuário não cadastrado poderão criar uma conta de usuário para entrar no sistema e criar reviews
  - "meus reviews" do usuário : aonde o usuário pode editar ou excluir review
  - editar perfil : aonde usuário poderá editar seus dados
+
+11/10/2017
+Continuação dos protótipos de LO-FI: exclusão de perfil, busca de jogo e add jogo.
+            e 5 cenários.
+Decisões de versionamento: node 8, angular.io 4, express 4, mongoose 4
+Desenvolvimento da VM - necessidade: conta no google e acesso ao google cloud
