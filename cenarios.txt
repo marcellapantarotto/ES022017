@@ -13,45 +13,88 @@ Feature: User can manually add movie 2
 
 
 Feature: Usuário anônimo pode entrar na home page para ler reviews
- Scenario: Ler reviews
+Scenario: Ler reviews
  Given I am on the home page
- Então eu deveria conseguir rolar pela página e ter acesso aos reviews
+ Então eu deveria conseguir rolar pela página e ter acesso aos jogos e reviews
 
-Feature: Autenticação
- Scenario: Realizar login
- Given I am on the home page
- Quando eu
- Então eu
+Feature: Usuário cadastrado pode escrever review e submeter para que outros usuários possam interagir
+Scenario: Escrever e submeter review
 
-Feature: Usuário cadastrado pode escrever review e submeter para análise
- Scenario: Escrever review
- Given I am on the main page
- Quando eu
- Então eu
+ Given I am on the home page and logged in
+ Quando eu coloco na search bar "Bastion" e aperto enter
+ Então eu devo ver Bastion nos jogos listados, na página de resultados
+ Quando eu clico na imagem do jogo
+ Então devo ver a página do jogo Bastion
+ Quando eu clico em "Escrever Review"
+ Então devo ver na página o espaço para escrever review
+ Quando eu clico no botão "Approved" Thumbsup
+ Então devo ver o joinha destacado
+ Quando	eu escrevo na descrição da review "10/10 Would play forever"
+ e clico no botão para submeter a review
+ Então devo ver a review criada no campo reviews com o joinha destacado e "10/10 Would play forever" escrito no espaço da descrição
 
 Feature: Administrador pode add jogo
- Scenario: Add jogo
- Given I am on the main page
- Quando eu
- Então eu
+Scenario: Add jogo
 
-Feature: Administrador pode aprovar review
- Scenario: Aprovar review
- Given I am on the main page
- Quando eu
- Então eu
+ Given I am on the admin's main page and I'm logged in with an admin account
+ Quando eu clicar em "Adicionar jogo"
+ Então eu devo ver a página para adicionar um jogo
+ Quando eu escrevo "" em "Nome do jogo" //a definir
+ e "" na descrição do jogo
+ e "" nos pré requisitos
+ e coloco a imagem "" na imagem do jogo
+ e clico em Submeter
+ Então eu devo ver a página do jogo "" 
+ com "" na descrição
+ e "" nos pré-requisitos
+ e a imagem "" como capa
 
-Feature: Administrador pode negar review
- Scenario: Negar review
- Given I am on the main page
- Quando eu
- Então eu
+Feature: Usuário cadastrado pode sugerir jogo inexistente na lista para ser adicionado
+Scenario: Sugestão de jogo
 
-Feature: Administrador pode banir usuário
- Scenario: Banir usuário
- Given I am on the main page
- Quando eu
- Então eu
+ Given I am on the main page and logged in
+ Quando eu escrever "Earthworm Jim" na search bar e aperto o enter
+ Então eu não devo encontrar Earthworm Jim na lista de resultados
+ Quando eu clico em "Sugerir adicionar jogo"
+ Então eu devo ver a página para sugerir add
+ Quando eu escrevo "Earthworm Jim" em "Nome jogo" e clico em submeter
+ Então devo ver a mensagem "Sugestão enviada"
+
+Feature: Administrador pode deletar review
+Scenario: deletar review
+
+ Given I am on the home page and logged in as an admin
+ Quando eu coloco na search bar "Bastion" e aperto enter
+ Então eu devo ver Bastion nos jogos listados, na página de resultados
+ Quando eu clico na imagem de Bastion
+ Então eu devo ver a página do jogo Bastion
+ Quando eu apertar no botão para deletar a review "Teste"
+ Então eu devo ver a mensagem de confirmação "Você tem certeza de que gostaria de deletar essa review?" com as opções de sim e não
+ Quando eu aperto o botão de sim
+ Então eu deveria ver a página do jogo bastion 
+ e ver a mensagem "Review deletada"
+ e verificar que a review "Teste" não está mais lá
+
+Feature: Administrador pode banir usuário e verificar se está na lista de usuários banidos após
+Scenario: Banir usuário e procurá-lo na lista de usuários banidos
+
+ Given I am on the main page and I am logged in as an admin
+ .(Visitar o perfil)
+ .(Por sugestão)
+ .(Search no perfil)
+ Então eu devo ver a página de perfil do usuário Tester
+ Quando eu apertar o botão de banir usuário
+ Então devo ver a mensagem "Tem certeza de que gostaria de banir esse usuário?" com as opções sim e não
+ Quando eu apertar a opção sim
+ Então eu devo ver a mensagem "Qual o motivo?(Opcional)" e a opção Concluir e Cancelar
+ Quando eu aperto Concluir
+ Então eu devo ver a main page e a mensagem "Usuário Tester banido"
+ Quando eu clico em Options
+ Então devo ver uma página com as opções... e usuários banidos
+ Quando clico em usuários banidos
+ Então devo ver uma página com a lista de usuários banidos
+ Quando eu colocar "Tester" ou o email "tester...@gmail.com" na search bar e apertar enter
+ Então devo ver o usuário Tester na lista de resultados
 
 Feature: Usuário anônimo pode se cadastrar
  Scenario: Realizar cadastro
@@ -67,9 +110,21 @@ Feature: Usuário cadastrado pode requisitar recuperação de senha
 
 Feature: Usuário cadastrado ou Administrador pode editar perfil
  Scenario: Editar perfil
- Given I am on the main page
- Quando eu
- Então eu
+
+ Given I am on the home page do perfil Tester
+ Quando eu clicar em editar perfil
+ Então eu devo ver a página de editar perfil
+ Quando eu clicar em Editar foto
+ Então devo ver uma nova janela para procurar a foto
+ Quando eu colocar a foto "" localizada em "" e apertar o botão concluir
+ Então devo ver a opção de crop photo // a definir
+ .
+ .
+ .
+ Quando eu clico em Editar descrição
+ Então devo ver a o espaço para a descrição em modo editar e o cursor no final do texto 
+ Quando eu substituir todo os caracteres por "Teste2" e apertar concluir
+ Então devo ver "Teste2" na minha descrição 
 
 Feature: Usuário cadastrado pode enviar mensagem a outros usuários cadastrados
  Scenario: Enviar mensagem
@@ -114,134 +169,143 @@ Feature: Administrador pode deletar review
  Então eu
 
 Feature: Usuário cadastrado pode dar upvote em uma review
- Scenario: Upvote
- Given I am on the main page
- Quando eu
- Então eu
+Scenario: Upvote
+
+ Given I am on the main page and logged in as Tester
+ Quando eu coloco na search bar "Bastion" e aperto enter
+ Então eu devo ver Bastion nos jogos listados, na página de resultados
+ Quando eu clico na imagem de Bastion
+ Então eu devo ver a página do jogo Bastion
+ Quando eu der upvote na review de Teste
+ Então eu devo ver que o thumbs up ficou destacado e que a contagem deste aumentou em 1
 
 Feature: Usuário cadastrado pode dar downvote em uma review
- Scenario: Downvote
- Given I am on the main page
- Quando eu
- Então eu
+Scenario: Downvote
 
- Feature: Usuário não cadastrado pode se cadastrar e realizar login
+ Given I am on the main page and logged in as Tester
+ Quando eu coloco na search bar "Bastion" e aperto enter
+ Então eu devo ver Bastion nos jogos listados, na página de resultados
+ Quando eu clico na imagem de Bastion
+ Então eu devo ver a página do jogo Bastion
+ Quando eu der downvote na review de Teste
+ Então eu devo ver que o thumbs down ficou destacado e que a contagem deste aumentou em 1 
+
+Feature: Usuário não cadastrado pode se cadastrar e realizar login
 Scenario: Fazer cadastro e realizar login
 
-Dado que estou na página inicial
-Quando eu clico no botão 'cadastrar'
-Então eu devo ver a página para realizar o cadastro
-Quando eu digito 'José' no campo Nome
-e digito 'joséias@gmail.com' no campo email
-e 'josezão' no campo username
-e 'josuado12' no campo senha
-e 'josuado12' no campo confirmar senha
-e clico no botão "Finalizar cadastro"
-Então eu devo ver uma página de confirmação
-e uma caixa com a mensagem 'Usuário cadastrado'
-Então eu clico em página inicial e devo retornar a página inicial
-Quando eu clico no botão login
-Então devo ver a página para realizar o login
-Quando eu digito 'josezão' no campo username
-e 'josuado12' no campo senha
-e aperto o enter/botão de entrar
-Então eu devo ver a home page do perfil de josezão
+ Given I'm on the home page
+ Quando eu clico no botão 'cadastrar'
+ Então eu devo ver a página para realizar o cadastro
+ Quando eu digito 'Tester Testes' no campo Nome Completo
+ e digito 'tester...@gmail.com' no campo email //colocar email válido
+ e 'Tester' no campo username
+ e 'teste_123' no campo senha
+ e 'teste_123' no campo confirmar senha
+ e clico no botão "Finalizar cadastro"
+ Então eu devo ver a home page
+ e uma caixa com a mensagem 'Usuário cadastrado'
+ Quando eu clico no botão login
+ Então devo ver a página para realizar o login
+ Quando eu digito 'Tester' no campo username
+ e 'teste_123' no campo senha
+ e aperto o enter/botão de entrar
+ Então eu devo ver a home page do perfil de Tester
 
-Feature: Usuário anônimo pode entrar  na página inicial para buscar um jogo e ler o seu  review
+Feature: Usuário anônimo pode entrar na página inicial para buscar um jogo e tentar escrever review
 Scenario: Lendo os reviews como usuário anônimo
-
-Dado que estou na página inicial da plataforma
-Quando eu digito no campo de busca 'mass effect'
-Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'mass effect'
-Quando eu clico em 'mass effect 2'
-Então eu devo ver a página com a descrição e os reviews do jogo 'mass effect 2'
-Quando eu clico em fazer um review
-Então eu devo ver uma caixa com a mensagem 'Você precisa estar logado para fazer um review'
-
+ 
+ Dado que estou na página inicial da plataforma
+ Quando eu digito no campo de busca 'mass effect'
+ Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'mass effect'
+ Quando eu clico em 'mass effect 2'
+ Então eu devo ver a página com a descrição e os reviews do jogo 'mass effect 2'
+ Quando eu clico em fazer um review
+ Então eu devo ver uma caixa com a mensagem 'Você precisa estar logado para fazer um review'
+ 
 Feature: Usuário anônimo pode entrar  na página inicial e ver os últimos reviews
 Scenario: Lendo os reviews como usuário anônimo
 
-Dado que como usuário anônimo estou na página inicial
-Devo ver os jogos que contém os últimos reviews da plataforma em ordem temporal
-Quando eu clico em 'mass effect 2'
-Então eu devo ver a página com a descrição e os reviews do jogo 'mass effect 2'
-
+ Dado que como usuário anônimo estou na página inicial
+ Devo ver os jogos que contém os últimos reviews da plataforma em ordem temporal
+ Quando eu clico em 'mass effect 2'
+ Então eu devo ver a página com a descrição e os reviews do jogo 'mass effect 2'
+ 
 Feature: Usuário logado pode fazer um review
 Scenario: Fazer um review
 
-Dado que estou logado e na página inicial
-Quando digto no campo de busca 'warcraft'
-Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
-Quando clico em 'world of warcraft'
-Então eu devo ver a página com a descrição e os reviews do jogo 'world of warcraft'
-Quando eu clico no campo 'fazer um review'
-Então eu devo ver uma caixa com um campo para fazer o review, com no máximo 1000 caracteres
-Quando eu escrevo um review e clico em submeter
-Então eu devo ser redirecionado à página do jogo world of warcraft
-Então devo ver o meu review no topo do campo 'últimos reviews desse jogo'
+ Dado que estou logado e na página inicial
+ Quando digto no campo de busca 'warcraft'
+ Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
+ Quando clico em 'world of warcraft'
+ Então eu devo ver a página com a descrição e os reviews do jogo 'world of warcraft'
+ Quando eu clico no campo 'fazer um review'
+ Então eu devo ver uma caixa com um campo para fazer o review, com no máximo 1000 caracteres
+ Quando eu escrevo um review e clico em submeter
+ Então eu devo ser redirecionado à página do jogo world of warcraft
+ Então devo ver o meu review no topo do campo 'últimos reviews desse jogo'
 
 Feature: Usuário logado pode adicionar um jogo que ainda não está na plataforma
 Scenario: Adicionar um jogo
 
-Dado que estou logado e na página inicial
-Quando digto no campo de busca 'warcraft'
-Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
-Ao percorrer a lista vejo que o jogo 'world of warcraft' não está na lista
-Quando clico em 'adicionar jogo'
-Então devo entrar numa página para adicionar um jogo
-Então digito 'world of warcraft' no campo nome do jogo
-Quando clico em submeter
-Então deverá aparecer uma mensagem 'o jogo será sugerido aos administradores'
+ Dado que estou logado e na página inicial
+ Quando digto no campo de busca 'warcraft'
+ Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
+ Ao percorrer a lista vejo que o jogo 'world of warcraft' não está na lista
+ Quando clico em 'adicionar jogo'
+ Então devo entrar numa página para adicionar um jogo
+ Então digito 'world of warcraft' no campo nome do jogo
+ Quando clico em submeter
+ Então deverá aparecer uma mensagem 'o jogo será sugerido aos administradores'
 
 Feature: Usuário logado pode apagar um review
 Scenario: Apagar review
 
-Dado que estou logado e na página inicial
-Quando clico em 'meus reviews'
-Então devo ver uma lista em ordem temporal de todos os reviews que eu fiz
-Quando clico em 'apagar' ao lado do review feito em 23/09/2017 sobre o jogo 'world of warcraft'
-Então deve aparecer uma janela com a mensagem 'Você deseja mesmo apagar esse review?'
-Quando clico em 'sim'
-Então sou redirecionado para a página com a lista dos meus reviews, onde o review feito em 23/09/2017 sobre o jogo 'world of warcraft' não constará na lista
+ Dado que estou logado e na página inicial
+ Quando clico em 'meus reviews'
+ Então devo ver uma lista em ordem temporal de todos os reviews que eu fiz
+ Quando clico em 'apagar' ao lado do review feito em 23/09/2017 sobre o jogo 'world of warcraft'
+ Então deve aparecer uma janela com a mensagem 'Você deseja mesmo apagar esse review?'
+ Quando clico em 'sim'
+ Então sou redirecionado para a página com a lista dos meus reviews, onde o review feito em 23/09/2017 sobre o jogo 'world of warcraft' não constará na lista
 
 Feature: Usuário logado pode editar um review
 Scenario: Editar review
 
-Dado que estou logado e na página inicial
-Quando clico em 'meus reviews'
-Então devo ver uma lista em ordem temporal de todos os reviews que eu fiz
-Quando clico em 'editar' ao lado do review feito em 23/09/2017 sobre o jogo 'world of warcraft'
-Então deve aparecer uma janela com o review feito pronto para ser editado
-Então edito  o que eu quero no review
-Quando clico em 'salvar alterações'
-Então sou redirecionado para a página com a lista dos meus reviews, onde o review feito em 23/09/2017 sobre o jogo 'world of warcraft' está agora no topo da lista dos meus reviews
+ Dado que estou logado e na página inicial
+ Quando clico em 'meus reviews'
+ Então devo ver uma lista em ordem temporal de todos os reviews que eu fiz
+ Quando clico em 'editar' ao lado do review feito em 23/09/2017 sobre o jogo 'world of  warcraft' 
+ Então dev e aparecer uma janela com o review feito pronto para ser editado 
+ Então edi to  o que eu quero no review 
+ Quando clico em 'salvar alterações' 
+ Então sou redirecionado para a página com a lista dos meus reviews, onde o review feito em  23/09/2017 sobre o jogo 'world of warcraft' está agora no topo da lista dos meus reviews
 
-Feature: Usuário logado pode editar a descição do seu perfil
+Feature: Usuário logado pode editar a descrição do seu perfil
 Scenario: Editar perfil
 
-Dado que estou logado na página inicial
-Quando clico em editar perfil
-Estão sou direcionado para uma página de edição do perfil
-Altero minha descrição do perfil
-Quando clico em 'salvar alterações'
-Então sou direcionado para a home page e vejo que meu perfil foi alterado
+ Dado que estou logado na página inicial
+ Quando clico em editar perfil
+ Estão sou direcionado para uma página de edição do perfil
+ Altero minha descrição do perfil
+ Quando clico em 'salvar alterações'
+ Então sou direcionado para a home page e vejo que meu perfil foi alterado
 
 Feature:  Usuário logado pode adicionar um jogo aos favoritos
 Scenario: Adicionar aos favoritos
 
-Dado que estou logado na página inicial
-Quando digto no campo de busca 'warcraft'
-Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
-Quando clico em 'world of warcraft'
-Então eu devo ver a página com a descrição e os reviews do jogo 'world of warcraft'
-Quando clico em 'adicionar esse jogo aos favoritos'
-Então retorno ao home page e vejo que o jogo 'world of warcraft' foi adicionado a lista dos meus favoritos (ordem temporal)
+ Dado que estou logado na página inicial
+ Quando digto no campo de busca 'warcraft'
+ Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
+ Quando clico em 'world of warcraft'
+ Então eu devo ver a página com a descrição e os reviews do jogo 'world of warcraft'
+ Quando clico em 'adicionar esse jogo aos favoritos'
+ Então retorno ao home page e vejo que o jogo 'world of warcraft' foi adicionado a lista dos  meus favoritos (ordem temporal)
 
 Feature: Usuário logado pode excluir um jogo dos seus favoritos
 Scenario: Exclusão de um jogo da lista de favoritos
 
-Dado que estou logado na página inicial
-Quando clico no ícone 'excluir' ao lado do jogo 'world of warcraft' na lista de favoritos
-Então é aberto uma janela com a mensagem 'Deseja excluir world of warcraft da sua lista de favoritos'
-Quando eu clico em confirmar
-Então a página inicial é atualizada e vejo que o jogo 'world of warcraft' não está mais na minha lista de favoritos
+ Dado que estou logado na página inicial
+ Quando clico no ícone 'excluir' ao lado do jogo 'world of warcraft' na lista de favoritos
+ Então é aberto uma janela com a mensagem 'Deseja excluir world of warcraft da sua lista de  favoritos' 
+ Quando eu clico em confirmar 
+ Então a página inicial é atualizada e vejo que o jogo 'world of warcraft' não está mais na  minha lista de favoritos
