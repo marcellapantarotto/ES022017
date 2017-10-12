@@ -15,116 +15,116 @@ Feature: User can manually add movie 2
 Feature: Usuário anônimo pode entrar na home page para ler reviews
  Scenario: Ler reviews
  Given I am on the home page
- Então eu deveria conseguir scrollar pela página e ter acesso aos reviews
+ Então eu deveria conseguir rolar pela página e ter acesso aos reviews
 
 Feature: Autenticação
  Scenario: Realizar login
  Given I am on the home page
- Quando eu 
+ Quando eu
  Então eu
- 
+
 Feature: Usuário cadastrado pode escrever review e submeter para análise
  Scenario: Escrever review
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
 
 Feature: Administrador pode add jogo
  Scenario: Add jogo
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Administrador pode aprovar review
  Scenario: Aprovar review
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Administrador pode negar review
  Scenario: Negar review
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Administrador pode banir usuário
  Scenario: Banir usuário
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário anônimo pode se cadastrar
  Scenario: Realizar cadastro
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário cadastrado pode requisitar recuperação de senha
  Scenario: Recuperar senha
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário cadastrado ou Administrador pode editar perfil
  Scenario: Editar perfil
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário cadastrado pode enviar mensagem a outros usuários cadastrados
  Scenario: Enviar mensagem
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário cadastrado pode solicitar exclusão da conta
  Scenario: Solicitar exclusão
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário cadastrado pode excluir review que escreveu
  Scenario: Excluir review
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário cadastrado pode sugerir adição de jogo ao catálogo
  Scenario: Sugestão de jogo
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário cadastrado pode realizar logoff
  Scenario: Logoff
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário cadastrado pode editar review que escreveu
  Scenario: Editar review
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Administrador pode deletar review
- Scenario: 
+ Scenario:
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário cadastrado pode dar upvote em uma review
  Scenario: Upvote
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
-  
+
 Feature: Usuário cadastrado pode dar downvote em uma review
  Scenario: Downvote
  Given I am on the main page
- Quando eu 
+ Quando eu
  Então eu
- 
+
  Feature: Usuário não cadastrado pode se cadastrar e realizar login
 Scenario: Fazer cadastro e realizar login
 
@@ -167,7 +167,7 @@ Quando eu clico em 'mass effect 2'
 Então eu devo ver a página com a descrição e os reviews do jogo 'mass effect 2'
 
 Feature: Usuário logado pode fazer um review
-Scenario: Fazer um review 
+Scenario: Fazer um review
 
 Dado que estou logado e na página inicial
 Quando digto no campo de busca 'warcraft'
@@ -177,7 +177,7 @@ Então eu devo ver a página com a descrição e os reviews do jogo 'world of wa
 Quando eu clico no campo 'fazer um review'
 Então eu devo ver uma caixa com um campo para fazer o review, com no máximo 1000 caracteres
 Quando eu escrevo um review e clico em submeter
-Então eu devo ser redirecionado à página do jogo world of warcraft 
+Então eu devo ser redirecionado à página do jogo world of warcraft
 Então devo ver o meu review no topo do campo 'últimos reviews desse jogo'
 
 Feature: Usuário logado pode adicionar um jogo que ainda não está na plataforma
@@ -227,7 +227,7 @@ Quando clico em 'salvar alterações'
 Então sou direcionado para a home page e vejo que meu perfil foi alterado
 
 Feature:  Usuário logado pode adicionar um jogo aos favoritos
-Scenario: Adicionar aos favoritos 
+Scenario: Adicionar aos favoritos
 
 Dado que estou logado na página inicial
 Quando digto no campo de busca 'warcraft'
