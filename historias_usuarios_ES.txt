@@ -23,10 +23,15 @@ COMO (COMO STAKEHOLDER): administrador
 EU QUERO (REALIZAR ATIVIDADE): adicionar um jogo
 PARA (ATINGIR UM OBJETIVO): para usu�rios avaliarem
 
-listar
+NOME DA FUNCIONALIDADE: listar jogos
+COMO (COMO STAKEHOLDER): usuário/admin
+EU QUERO (REALIZAR ATIVIDADE): listar todos os jogos
+PARA (ATINGIR UM OBJETIVO): encontrar/selecionar um jogo especifico
 
-selecionar
-
+NOME DA FUNCIONALIDADE: selecionar jogo
+COMO (COMO STAKEHOLDER): usuário/admin
+EU QUERO (REALIZAR ATIVIDADE): selecionar um jogo da lista de jogos exibidos
+PARA (ATINGIR UM OBJETIVO): visualizar um jogo especifico
 
 NOME DA FUNCIONALIDADE: aprovar/negar review
 COMO (COMO STAKEHOLDER): administrador
