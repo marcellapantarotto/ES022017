@@ -131,8 +131,8 @@ Scenario: Editar perfil
  .
  Quando eu clico em Editar descrição
  Então devo ver a o espaço para a descrição em modo editar e o cursor no final do texto 
- Quando eu substituir todo os caracteres por "Teste2" e apertar concluir
- Então devo ver "Teste2" na minha descrição 
+ Quando eu substituir todo os caracteres por "Teste editar perfil" e apertar concluir
+ Então devo ver "Teste editar perfil" na minha descrição 
 
 
 Feature: Usuário cadastrado pode enviar mensagem a outros usuários cadastrados
@@ -154,14 +154,6 @@ Feature: Usuário cadastrado pode solicitar exclusão da conta
  e teste_123 no campo confirmar senha
  e aperto Excluir perfil
  Então devo ver a página inicial e a mensagem "Conta excluída"
-
-
-Feature: Usuário cadastrado pode excluir review que escreveu
-Scenario: Excluir review
- Given I am on the main page and logged in as Tester
- Quando eu clicar em minhas reviews
- Então eu devo ver a página "Minhas reviews" ordenadas temporalmente
- Quando eu
 
 
 Feature: Usuário cadastrado pode realizar logoff
@@ -222,97 +214,66 @@ Feature: Usuário anônimo pode entrar na página inicial para buscar um jogo e 
 Scenario: Lendo os reviews como usuário anônimo
  
  Dado que estou na página inicial da plataforma
- Quando eu digito no campo de busca 'mass effect'
+ Quando eu digito no campo de busca 'mass effect' e aperto search
  Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'mass effect'
  Quando eu clico em 'mass effect 2'
  Então eu devo ver a página com a descrição e os reviews do jogo 'mass effect 2'
  Quando eu clico em fazer um review
  Então eu devo ver uma caixa com a mensagem 'Você precisa estar logado para fazer um review'
  
-Feature: Usuário anônimo pode entrar  na página inicial e ver os últimos reviews
+Feature: Usuário anônimo pode entrar na página inicial e ver os últimos reviews
 Scenario: Lendo os reviews como usuário anônimo
 
  Dado que como usuário anônimo estou na página inicial
  Devo ver os jogos que contém os últimos reviews da plataforma em ordem temporal
  Quando eu clico em 'mass effect 2'
  Então eu devo ver a página com a descrição e os reviews do jogo 'mass effect 2'
- 
-Feature: Usuário logado pode fazer um review
-Scenario: Fazer um review
 
- Dado que estou logado e na página inicial
- Quando digto no campo de busca 'warcraft'
- Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
- Quando clico em 'world of warcraft'
- Então eu devo ver a página com a descrição e os reviews do jogo 'world of warcraft'
- Quando eu clico no campo 'fazer um review'
- Então eu devo ver uma caixa com um campo para fazer o review, com no máximo 1000 caracteres
- Quando eu escrevo um review e clico em submeter
- Então eu devo ser redirecionado à página do jogo world of warcraft
- Então devo ver o meu review no topo do campo 'últimos reviews desse jogo'
 
-Feature: Usuário logado pode adicionar um jogo que ainda não está na plataforma
-Scenario: Adicionar um jogo
-
- Dado que estou logado e na página inicial
- Quando digto no campo de busca 'warcraft'
- Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
- Ao percorrer a lista vejo que o jogo 'world of warcraft' não está na lista
- Quando clico em 'adicionar jogo'
- Então devo entrar numa página para adicionar um jogo
- Então digito 'world of warcraft' no campo nome do jogo
- Quando clico em submeter
- Então deverá aparecer uma mensagem 'o jogo será sugerido aos administradores'
-
-Feature: Usuário logado pode apagar um review
+Feature: Usuário logado pode apagar um review que escreveu
 Scenario: Apagar review
 
- Dado que estou logado e na página inicial
+ Dado que estou logado como Tester e na página inicial
  Quando clico em 'meus reviews'
- Então devo ver uma lista em ordem temporal de todos os reviews que eu fiz
- Quando clico em 'apagar' ao lado do review feito em 23/09/2017 sobre o jogo 'world of warcraft'
- Então deve aparecer uma janela com a mensagem 'Você deseja mesmo apagar esse review?'
+ Então devo ver uma lista em ordem temporal de todos os meus reviews
+ Quando clico em 'apagar' ao lado do review sobre o jogo 'world of warcraft'
+ Então deve aparecer uma janela com a mensagem 'Você deseja mesmo apagar esse review?' e os botões sim e não
  Quando clico em 'sim'
- Então sou redirecionado para a página com a lista dos meus reviews, onde o review feito em 23/09/2017 sobre o jogo 'world of warcraft' não constará na lista
+ Então sou redirecionado para a página com a lista dos meus reviews, onde o review sobre o jogo 'world of warcraft' não constará na lista
 
 Feature: Usuário logado pode editar um review
 Scenario: Editar review
 
- Dado que estou logado e na página inicial
+ Dado que estou logado como Tester e na página inicial
  Quando clico em 'meus reviews'
- Então devo ver uma lista em ordem temporal de todos os reviews que eu fiz
- Quando clico em 'editar' ao lado do review feito em 23/09/2017 sobre o jogo 'world of  warcraft' 
- Então deve aparecer uma janela com o review feito pronto para ser editado 
- Então edito o que eu quero no review 
- Quando clico em 'salvar alterações' 
- Então sou redirecionado para a página com a lista dos meus reviews, onde o review feito em  23/09/2017 sobre o jogo 'world of warcraft' está agora no topo da lista dos meus reviews
+ Então devo ver uma lista em ordem temporal de todos os meus reviews
+ Quando clico em 'editar' ao lado do review sobre o jogo 'world of  warcraft' 
+ Então deve aparecer uma janela com o review pronto para ser editado 
+ Quando eu apago tudo e escrevo "Teste edição" e clico em 'salvar alterações' 
+ Então devo ver a página com a lista dos meus reviews e "Teste edição" no campo descrição do jogo world of warcraft
 
-Feature: Usuário logado pode editar a descrição do seu perfil
-Scenario: Editar perfil
 
- Dado que estou logado na página inicial
- Quando clico em editar perfil
- Estão sou direcionado para uma página de edição do perfil
- Altero minha descrição do perfil
- Quando clico em 'salvar alterações'
- Então sou direcionado para a home page e vejo que meu perfil foi alterado
-
-Feature:  Usuário logado pode adicionar um jogo aos favoritos
+Feature:  Usuário logado pode adicionar um jogo aos favoritos e verificar se consta na lista de favoritos
 Scenario: Adicionar aos favoritos
 
- Dado que estou logado na página inicial
- Quando digto no campo de busca 'warcraft'
+ Dado que estou logado como Tester e na página inicial
+ Quando digito no campo de busca 'warcraft'
  Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
  Quando clico em 'world of warcraft'
  Então eu devo ver a página com a descrição e os reviews do jogo 'world of warcraft'
  Quando clico em 'adicionar esse jogo aos favoritos'
- Então retorno ao home page e vejo que o jogo 'world of warcraft' foi adicionado a lista dos  meus favoritos (ordem temporal)
+ Então devo ver a home page e vejo a mensagem "Jogo adicionado aos favoritos"
+ Quando eu clico em "meus favoritos"
+ Então devo ver a página com a lista dos meus jogos favoritados e devo ver
+ o jogo world of warcraft por último
 
 Feature: Usuário logado pode excluir um jogo dos seus favoritos
 Scenario: Exclusão de um jogo da lista de favoritos
 
- Dado que estou logado na página inicial
+ Dado que estou logado como Tester e na página inicial
+ Quando clico em "meus favoritos"
+ Então devo ver a página com a lista dos meus jogos favoritados
  Quando clico no ícone 'excluir' ao lado do jogo 'world of warcraft' na lista de favoritos
- Então é aberto uma janela com a mensagem 'Deseja excluir world of warcraft da sua lista de  favoritos' 
+ Então é aberto uma janela com a mensagem 'Deseja excluir world of warcraft da sua lista de  favoritos?' e os botões confirmar e cancelar 
  Quando eu clico em confirmar 
- Então a página inicial é atualizada e vejo que o jogo 'world of warcraft' não está mais na  minha lista de favoritos
+ Então devo ver a página com a lista dos meus jogos favoritados e que o jogo 'world of warcraft' não está mais na minha lista de favoritos
