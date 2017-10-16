@@ -3,107 +3,110 @@ COMO (COMO STAKEHOLDER):
 EU QUERO (REALIZAR ATIVIDADE):
 PARA (ATINGIR UM OBJETIVO):
 
-(5)NOME DA FUNCIONALIDADE: visita para leitura
+Pontuação -> Fibonacci 
+
+1) NOME DA FUNCIONALIDADE: visita para leitura
 COMO (COMO STAKEHOLDER): usu�rio an�nimo
 EU QUERO (REALIZAR ATIVIDADE): entrar na pagina principal ler um review
 PARA (ATINGIR UM OBJETIVO): me informar sobre jogos
+Pontuação: 3
 
-(5)NOME DA FUNCIONALIDADE: autentica��o *******************************
+2) NOME DA FUNCIONALIDADE: autentica��o *******************************
 COMO (COMO STAKEHOLDER): usu�rio
 EU QUERO (REALIZAR ATIVIDADE): fazer login e senha
 PARA (ATINGIR UM OBJETIVO): escrever um review
 
-NOME DA FUNCIONALIDADE: escrever review / submeter para analise
+3) NOME DA FUNCIONALIDADE: escrever review / submeter para analise
 COMO (COMO STAKEHOLDER): usu�rio
 EU QUERO (REALIZAR ATIVIDADE): escrever review
 PARA (ATINGIR UM OBJETIVO): avaliar um jogo
 
-PARA (ATINGIR UM OBJETIVO): adicionar jogo
+4) PARA (ATINGIR UM OBJETIVO): adicionar jogo
 COMO (COMO STAKEHOLDER): administrador
 EU QUERO (REALIZAR ATIVIDADE): adicionar um jogo
 PARA (ATINGIR UM OBJETIVO): para usu�rios avaliarem
 
-NOME DA FUNCIONALIDADE: listar jogos
+5) NOME DA FUNCIONALIDADE: listar jogos
 COMO (COMO STAKEHOLDER): usuário/admin
 EU QUERO (REALIZAR ATIVIDADE): listar todos os jogos
 PARA (ATINGIR UM OBJETIVO): encontrar/selecionar um jogo especifico
 
-NOME DA FUNCIONALIDADE: selecionar jogo
+6) NOME DA FUNCIONALIDADE: selecionar jogo
 COMO (COMO STAKEHOLDER): usuário/admin
 EU QUERO (REALIZAR ATIVIDADE): selecionar um jogo da lista de jogos exibidos
 PARA (ATINGIR UM OBJETIVO): visualizar um jogo especifico
 
-NOME DA FUNCIONALIDADE: aprovar/negar review
+7) NOME DA FUNCIONALIDADE: aprovar/negar review
 COMO (COMO STAKEHOLDER): administrador
 EU QUERO (REALIZAR ATIVIDADE): curadoria do review
 PARA (ATINGIR UM OBJETIVO): manter ordem e qualidade do site / manter conte�do coeso
 
-NOME DA FUNCIONALIDADE: banir usu�rio
+8) NOME DA FUNCIONALIDADE: banir usu�rio
 COMO (COMO STAKEHOLDER): administrador
 EU QUERO (REALIZAR ATIVIDADE): banir usu�rio
 PARA (ATINGIR UM OBJETIVO): evitar mau comportamento
 
-NOME DA FUNCIONALIDADE: cadastro
+9) NOME DA FUNCIONALIDADE: cadastro
 COMO (COMO STAKEHOLDER): usu�rio an�nimo
 EU QUERO (REALIZAR ATIVIDADE): me cadastrar
 PARA (ATINGIR UM OBJETIVO): usufruir das funcionalidade de cadastrado
 
-NOME DA FUNCIONALIDADE: recuperar senha
+10) NOME DA FUNCIONALIDADE: recuperar senha
 COMO (COMO STAKEHOLDER): usu�rio
 EU QUERO (REALIZAR ATIVIDADE): gerar nova senha
 PARA (ATINGIR UM OBJETIVO): recuperar minha conta / acessar site
 
-NOME DA FUNCIONALIDADE: editar perfil
+11) NOME DA FUNCIONALIDADE: editar perfil
 COMO (COMO STAKEHOLDER): cadastrado (usu�rio/administrador)
 EU QUERO (REALIZAR ATIVIDADE): mudar meu dados de perfil
 PARA (ATINGIR UM OBJETIVO): atualizar meus dados
 
-NOME DA FUNCIONALIDADE: mandar mensagem
+12) NOME DA FUNCIONALIDADE: mandar mensagem
 COMO (COMO STAKEHOLDER): cadastrado
 EU QUERO (REALIZAR ATIVIDADE): poder mandar mensagens
 PARA (ATINGIR UM OBJETIVO): me comunicar com outros cadastrados
 
-NOME DA FUNCIONALIDADE: solicitar exclus�o da conta
+13) NOME DA FUNCIONALIDADE: solicitar exclus�o da conta
 COMO (COMO STAKEHOLDER): cadastrado
 EU QUERO (REALIZAR ATIVIDADE): pedir dele��o da minha conta
 PARA (ATINGIR UM OBJETIVO): n�o participar mais do site
 
-NOME DA FUNCIONALIDADE: excluir perfil
+14) NOME DA FUNCIONALIDADE: excluir perfil
 COMO (COMO STAKEHOLDER): administrador
 EU QUERO (REALIZAR ATIVIDADE): poder excluir uma conta
 PARA (ATINGIR UM OBJETIVO): atender uma solicita��o de exclus�o
 
-NOME DA FUNCIONALIDADE: adicionar jogo aos favoritos
+15) NOME DA FUNCIONALIDADE: adicionar jogo aos favoritos
 COMO (COMO STAKEHOLDER): usu�rio
 EU QUERO (REALIZAR ATIVIDADE): adicionar jogo a minha lista de favoritos
 PARA (ATINGIR UM OBJETIVO): manter uma organiza��o dos meus jogos favoritos
 
-NOME DA FUNCIONALIDADE: excluir review
+16) NOME DA FUNCIONALIDADE: excluir review
 COMO (COMO STAKEHOLDER): cadastrado
 EU QUERO (REALIZAR ATIVIDADE): excluir meu review
 PARA (ATINGIR UM OBJETIVO): n�o ter mais review
 
-NOME DA FUNCIONALIDADE: sugerir adi��o de jogo ao banco
+17) NOME DA FUNCIONALIDADE: sugerir adi��o de jogo ao banco
 COMO (COMO STAKEHOLDER): usu�rio
 EU QUERO (REALIZAR ATIVIDADE): sugerir ao administrador um jogo
 PARA (ATINGIR UM OBJETIVO): ser adicionado ao site
 
-NOME DA FUNCIONALIDADE: deslogar
+18) NOME DA FUNCIONALIDADE: deslogar
 COMO (COMO STAKEHOLDER): usu�rio logado
 EU QUERO (REALIZAR ATIVIDADE): deslogar do site
 PARA (ATINGIR UM OBJETIVO): ir embora
 
-NOME DA FUNCIONALIDADE: editar review
+19) NOME DA FUNCIONALIDADE: editar review
 COMO (COMO STAKEHOLDER): cadastrado
 EU QUERO (REALIZAR ATIVIDADE): editar um review que eu j� tenha escrito
 PARA (ATINGIR UM OBJETIVO): realizar edi��es
 
-NOME DA FUNCIONALIDADE: aprovar review editado
+20) NOME DA FUNCIONALIDADE: aprovar review editado
 COMO (COMO STAKEHOLDER): administrador
 EU QUERO (REALIZAR ATIVIDADE): aprovar uma edi��o de review / curadoria de edi��o
 PARA (ATINGIR UM OBJETIVO): manter ordem e qualidade do site / manter conte�do coeso
 
-NOME DA FUNCIONALIDADE: votar
+21) NOME DA FUNCIONALIDADE: votar
 COMO (COMO STAKEHOLDER): cadastrado
 EU QUERO (REALIZAR ATIVIDADE): avaliar positivamente ou negativamente um review
 PARA (ATINGIR UM OBJETIVO): destacar reviews boas ou ruins
