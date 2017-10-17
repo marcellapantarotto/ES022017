@@ -14,6 +14,6 @@ script:
   - tar cvfz /tmp/app-frontend.tar.gz ./*
   - popd
   - popd
-  - $SCP /tmp/app-frontend.tar.gz $SERVER_USER@SERVER_DNS:/tmp
+  - $SCP /tmp/app-frontend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
   - $REMOTE_SHELL "cd /srv/headshot/app-frontend && tar xvfz /tmp/app-frontend.tar.gz"
   - $REMOTE_SHELL "rm /tmp/app-frontend.tar.gz"
