@@ -1,3 +1,10 @@
 language: node_js
+node_js:
+  - 8.7.0
 script:
+  - openssl aes-256-cbc -K $encrypted_a30fa7ac3cd3_key -iv $encrypted_a30fa7ac3cd3_iv -in headshot.enc -out /tmp/headshot -d
+  - eval "$(ssh-agent -s)"
+  - chmod 600 /tmp/headshot
+  - ssh-add /tmp/headshot
+  - rsh headshot@headshot.ddns.net "touch ~/travisWasHere"
   - exit 0
