@@ -6,5 +6,5 @@ script:
   - eval "$(ssh-agent -s)"
   - chmod 600 /tmp/headshot
   - ssh-add /tmp/headshot
-  - rsh headshot@headshot.ddns.net "touch ~/travisWasHere"
+  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "touch ~/travisWasHere"
   - exit 0
