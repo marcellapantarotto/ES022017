@@ -1,0 +1,133 @@
+|=================================| PRIMEIRA PILHA: |=================================|
+
+1) NOME DA FUNCIONALIDADE: visita para leitura
+COMO (COMO STAKEHOLDER): usuario anonimo
+EU QUERO (REALIZAR ATIVIDADE): entrar na pagina principal ler um review
+PARA (ATINGIR UM OBJETIVO): me informar sobre jogos
+Pontuação: 1
+Pré-requisito: 3
+
+9) NOME DA FUNCIONALIDADE: cadastro
+COMO (COMO STAKEHOLDER): usuario anonimo
+EU QUERO (REALIZAR ATIVIDADE): me cadastrar
+PARA (ATINGIR UM OBJETIVO): usufruir das funcionalidade de cadastrado
+Pontuação: 3
+Pré-requisito: 
+
+2) NOME DA FUNCIONALIDADE: autenticacao/login *******************************
+COMO (COMO STAKEHOLDER): usuario
+EU QUERO (REALIZAR ATIVIDADE): fazer login e senha
+PARA (ATINGIR UM OBJETIVO): escrever um review
+Pontuação: 5
+Pré-requisito: 9 
+
+18) NOME DA FUNCIONALIDADE: deslogar
+COMO (COMO STAKEHOLDER): usuario logado
+EU QUERO (REALIZAR ATIVIDADE): deslogar do site
+PARA (ATINGIR UM OBJETIVO): ir embora
+Pontuação: 2
+Pré-requisito: 9, 2
+
+4) PARA (ATINGIR UM OBJETIVO): adicionar jogo
+COMO (COMO STAKEHOLDER): administrador
+EU QUERO (REALIZAR ATIVIDADE): adicionar um jogo
+PARA (ATINGIR UM OBJETIVO): para usu�rios avaliarem
+Pontuação: 3
+Pré-requisito: 9, 2
+
+5) NOME DA FUNCIONALIDADE: listar jogos
+COMO (COMO STAKEHOLDER): usuário/admin
+EU QUERO (REALIZAR ATIVIDADE): listar todos os jogos
+PARA (ATINGIR UM OBJETIVO): encontrar/selecionar um jogo especifico
+Pontuação: 3
+Pré-requisito: 9, 2
+
+6) NOME DA FUNCIONALIDADE: selecionar jogo
+COMO (COMO STAKEHOLDER): usuário/admin
+EU QUERO (REALIZAR ATIVIDADE): selecionar um jogo da lista de jogos exibidos
+PARA (ATINGIR UM OBJETIVO): visualizar um jogo especifico
+Pontuação: 1
+Pré-requisito: 9, 2, 4, 5
+
+
+|=================================| SEGUNDA PILHA: |=================================|
+
+11) NOME DA FUNCIONALIDADE: editar perfil
+COMO (COMO STAKEHOLDER): cadastrado (usuario/administrador)
+EU QUERO (REALIZAR ATIVIDADE): mudar meu dados de perfil
+PARA (ATINGIR UM OBJETIVO): atualizar meus dados
+Pontuação: 2
+Pré-requisito: 9
+
+13) NOME DA FUNCIONALIDADE: exclusao da conta
+COMO (COMO STAKEHOLDER): cadastrado
+EU QUERO (REALIZAR ATIVIDADE): excluir minha conta
+PARA (ATINGIR UM OBJETIVO): nao participar mais do site
+Pontuação: 2
+Pré-requisito: 9, 2
+
+3) NOME DA FUNCIONALIDADE: escrever review / submeter para analise
+COMO (COMO STAKEHOLDER): usuario
+EU QUERO (REALIZAR ATIVIDADE): escrever review
+PARA (ATINGIR UM OBJETIVO): avaliar um jogo
+Pontuação: 2
+Pré-requisito: 9, 2
+
+19) NOME DA FUNCIONALIDADE: editar review
+COMO (COMO STAKEHOLDER): cadastrado
+EU QUERO (REALIZAR ATIVIDADE): editar um review que eu ja tenha escrito
+PARA (ATINGIR UM OBJETIVO): realizar edicoes
+Pontuação: 3
+Pré-requisito: 9, 2 
+
+16) NOME DA FUNCIONALIDADE: excluir review
+COMO (COMO STAKEHOLDER): cadastrado
+EU QUERO (REALIZAR ATIVIDADE): excluir meu review
+PARA (ATINGIR UM OBJETIVO): nao ter mais review
+Pontuação: 2
+Pré-requisito: 9, 2, 4
+
+8) NOME DA FUNCIONALIDADE: banir usuario
+COMO (COMO STAKEHOLDER): administrador
+EU QUERO (REALIZAR ATIVIDADE): banir usuario
+PARA (ATINGIR UM OBJETIVO): evitar mau comportamento
+Pontuação: 3
+Pré-requisito: 2
+
+15) NOME DA FUNCIONALIDADE: adicionar jogo aos favoritos
+COMO (COMO STAKEHOLDER): usuario
+EU QUERO (REALIZAR ATIVIDADE): adicionar jogo a minha lista de favoritos
+PARA (ATINGIR UM OBJETIVO): manter uma organizacao dos meus jogos favoritos
+Pontuação: 2
+Pré-requisito: 9, 2, 4, 5, 6
+
+21) NOME DA FUNCIONALIDADE: votar
+COMO (COMO STAKEHOLDER): cadastrado
+EU QUERO (REALIZAR ATIVIDADE): avaliar positivamente ou negativamente um review
+PARA (ATINGIR UM OBJETIVO): destacar reviews boas ou ruins
+Pontuação: 2
+Pré-requisito: 9, 2, 4, 5, 6
+
+
+|=================================| TERCEIRA PILHA: |=================================|
+
+17) NOME DA FUNCIONALIDADE: sugerir adicao de jogo ao banco
+COMO (COMO STAKEHOLDER): usuario
+EU QUERO (REALIZAR ATIVIDADE): sugerir ao administrador um jogo
+PARA (ATINGIR UM OBJETIVO): ser adicionado ao site
+Pontuação: 5
+Pré-requisito: 9, 2
+
+12) NOME DA FUNCIONALIDADE: mandar mensagem			****(talvez nao role por falta de tempo)
+COMO (COMO STAKEHOLDER): cadastrado
+EU QUERO (REALIZAR ATIVIDADE): poder mandar mensagens
+PARA (ATINGIR UM OBJETIVO): me comunicar com outros cadastrados
+Pontuação: 3
+Pré-requisito: 9, 2
+
+10) NOME DA FUNCIONALIDADE: recuperar senha 		***(talvez nao role por tempo)***
+COMO (COMO STAKEHOLDER): usuario
+EU QUERO (REALIZAR ATIVIDADE): gerar nova senha
+PARA (ATINGIR UM OBJETIVO): recuperar minha conta / acessar site
+Pontuação: 5
+Pré-requisito: 9

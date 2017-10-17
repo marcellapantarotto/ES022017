@@ -12,14 +12,14 @@ Feature: User can manually add movie 2
 11 And I should see "Men In Black"
 
 
-Feature: Usuário anônimo pode entrar na home page para ler reviews
+1) Feature: Usuário anônimo pode entrar na home page para ler reviews
 Scenario: Ler reviews
 
  Given I am on the home page
  Então eu deveria conseguir rolar pela página e ter acesso aos jogos e reviews
 
 
-Feature: Usuário cadastrado pode escrever review e submeter para que outros usuários possam interagir
+2) Feature: Usuário cadastrado pode escrever review e submeter para que outros usuários possam interagir
 Scenario: Escrever e submeter review
 
  Given I am on the home page and logged in
@@ -36,7 +36,7 @@ Scenario: Escrever e submeter review
  Então devo ver a review criada no campo reviews com o joinha destacado e "10/10 Would play forever" escrito no espaço da descrição
 
 
-Feature: Administrador pode add jogo
+3) Feature: Administrador pode add jogo
 Scenario: Add jogo
 
  Given I am on the admin's main page and I'm logged in with an admin account
@@ -53,7 +53,7 @@ Scenario: Add jogo
  e a imagem "" como capa
 
 
-Feature: Usuário cadastrado pode sugerir jogo inexistente na lista para ser adicionado
+4) Feature: Usuário cadastrado pode sugerir jogo inexistente na lista para ser adicionado
 Scenario: Sugestão de jogo
 
  Given I am on the main page and logged in
@@ -65,7 +65,7 @@ Scenario: Sugestão de jogo
  Então devo ver a mensagem "Sugestão enviada"
 
 
-Feature: Administrador pode deletar review
+5) Feature: Administrador pode deletar review
 Scenario: deletar review
 
  Given I am on the home page and logged in as an admin
@@ -81,7 +81,7 @@ Scenario: deletar review
  e verificar que a review "Teste" não está mais lá
 
 
-Feature: Administrador pode banir usuário e verificar se está na lista de usuários banidos após
+6) Feature: Administrador pode banir usuário e verificar se está na lista de usuários banidos após
 Scenario: Banir usuário e procurá-lo na lista de usuários banidos
 
  Given I am on the main page and I am logged in as an admin
@@ -103,7 +103,7 @@ Scenario: Banir usuário e procurá-lo na lista de usuários banidos
  Então devo ver o usuário Tester na lista de resultados
 
 
-Feature: Usuário cadastrado pode requisitar recuperação de senha
+7) Feature: Usuário cadastrado pode requisitar recuperação de senha
 Scenario: Recuperar senha
 
  Given I am on the main page
@@ -116,7 +116,7 @@ Scenario: Recuperar senha
  Então devo ver a mensagem "Solicitação enviada"
 
 
-Feature: Usuário cadastrado ou Administrador pode editar perfil
+8) Feature: Usuário cadastrado ou Administrador pode editar perfil
 Scenario: Editar perfil
 
  Given I am on the home page do perfil Tester
@@ -131,11 +131,11 @@ Scenario: Editar perfil
  .
  Quando eu clico em Editar descrição
  Então devo ver a o espaço para a descrição em modo editar e o cursor no final do texto 
- Quando eu substituir todo os caracteres por "Teste2" e apertar concluir
- Então devo ver "Teste2" na minha descrição 
+ Quando eu substituir todo os caracteres por "Teste editar perfil" e apertar concluir
+ Então devo ver "Teste editar perfil" na minha descrição 
 
 
-Feature: Usuário cadastrado pode enviar mensagem a outros usuários cadastrados
+9) Feature: Usuário cadastrado pode enviar mensagem a outros usuários cadastrados
 Scenario: Enviar mensagem
  Given I am on the main page
  Quando eu
@@ -143,7 +143,7 @@ Scenario: Enviar mensagem
 (Poderia retirar por mim)
 
 
-Feature: Usuário cadastrado pode solicitar exclusão da conta
+10) Feature: Usuário cadastrado pode solicitar exclusão da conta
  Scenario: Solicitar exclusão
  Given I am on the main page and logged in as Tester
  Quando eu clico em Editar perfil
@@ -156,15 +156,7 @@ Feature: Usuário cadastrado pode solicitar exclusão da conta
  Então devo ver a página inicial e a mensagem "Conta excluída"
 
 
-Feature: Usuário cadastrado pode excluir review que escreveu
-Scenario: Excluir review
- Given I am on the main page and logged in as Tester
- Quando eu clicar em minhas reviews
- Então eu devo ver a página "Minhas reviews" ordenadas temporalmente
- Quando eu
-
-
-Feature: Usuário cadastrado pode realizar logoff
+11) Feature: Usuário cadastrado pode realizar logoff
 Scenario: Logoff
 
  Given I am on the main page and logged in as Tester
@@ -172,7 +164,7 @@ Scenario: Logoff
  Então eu devo ver a página inicial e o botão de realizar login
 
 
-Feature: Usuário cadastrado pode dar upvote em uma review
+12) Feature: Usuário cadastrado pode dar upvote em uma review
 Scenario: Upvote
 
  Given I am on the main page and logged in as Tester
@@ -184,7 +176,7 @@ Scenario: Upvote
  Então eu devo ver que o thumbs up ficou destacado e que a contagem deste aumentou em 1
 
 
-Feature: Usuário cadastrado pode dar downvote em uma review
+13) Feature: Usuário cadastrado pode dar downvote em uma review
 Scenario: Downvote
 
  Given I am on the main page and logged in as Tester
@@ -196,7 +188,7 @@ Scenario: Downvote
  Então eu devo ver que o thumbs down ficou destacado e que a contagem deste aumentou em 1 
 
 
-Feature: Usuário não cadastrado pode se cadastrar e realizar login
+14) Feature: Usuário não cadastrado pode se cadastrar e realizar login
 Scenario: Fazer cadastro e realizar login
 
  Given I'm on the home page
@@ -218,101 +210,71 @@ Scenario: Fazer cadastro e realizar login
  Então eu devo ver a home page do perfil de Tester
 
 
-Feature: Usuário anônimo pode entrar na página inicial para buscar um jogo e tentar escrever review
+15) Feature: Usuário anônimo pode entrar na página inicial para buscar um jogo e tentar escrever review
 Scenario: Lendo os reviews como usuário anônimo
  
  Dado que estou na página inicial da plataforma
- Quando eu digito no campo de busca 'mass effect'
+ Quando eu digito no campo de busca 'mass effect' e aperto search
  Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'mass effect'
  Quando eu clico em 'mass effect 2'
  Então eu devo ver a página com a descrição e os reviews do jogo 'mass effect 2'
  Quando eu clico em fazer um review
  Então eu devo ver uma caixa com a mensagem 'Você precisa estar logado para fazer um review'
  
-Feature: Usuário anônimo pode entrar  na página inicial e ver os últimos reviews
+16) Feature: Usuário anônimo pode entrar na página inicial e ver os últimos reviews
 Scenario: Lendo os reviews como usuário anônimo
 
  Dado que como usuário anônimo estou na página inicial
  Devo ver os jogos que contém os últimos reviews da plataforma em ordem temporal
  Quando eu clico em 'mass effect 2'
  Então eu devo ver a página com a descrição e os reviews do jogo 'mass effect 2'
- 
-Feature: Usuário logado pode fazer um review
-Scenario: Fazer um review
 
- Dado que estou logado e na página inicial
- Quando digto no campo de busca 'warcraft'
- Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
- Quando clico em 'world of warcraft'
- Então eu devo ver a página com a descrição e os reviews do jogo 'world of warcraft'
- Quando eu clico no campo 'fazer um review'
- Então eu devo ver uma caixa com um campo para fazer o review, com no máximo 1000 caracteres
- Quando eu escrevo um review e clico em submeter
- Então eu devo ser redirecionado à página do jogo world of warcraft
- Então devo ver o meu review no topo do campo 'últimos reviews desse jogo'
 
-Feature: Usuário logado pode adicionar um jogo que ainda não está na plataforma
-Scenario: Adicionar um jogo
-
- Dado que estou logado e na página inicial
- Quando digto no campo de busca 'warcraft'
- Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
- Ao percorrer a lista vejo que o jogo 'world of warcraft' não está na lista
- Quando clico em 'adicionar jogo'
- Então devo entrar numa página para adicionar um jogo
- Então digito 'world of warcraft' no campo nome do jogo
- Quando clico em submeter
- Então deverá aparecer uma mensagem 'o jogo será sugerido aos administradores'
-
-Feature: Usuário logado pode apagar um review
+17) Feature: Usuário logado pode apagar um review que escreveu
 Scenario: Apagar review
 
- Dado que estou logado e na página inicial
+ Dado que estou logado como Tester e na página inicial
  Quando clico em 'meus reviews'
- Então devo ver uma lista em ordem temporal de todos os reviews que eu fiz
- Quando clico em 'apagar' ao lado do review feito em 23/09/2017 sobre o jogo 'world of warcraft'
- Então deve aparecer uma janela com a mensagem 'Você deseja mesmo apagar esse review?'
+ Então devo ver uma lista em ordem temporal de todos os meus reviews
+ Quando clico em 'apagar' ao lado do review sobre o jogo 'world of warcraft'
+ Então deve aparecer uma janela com a mensagem 'Você deseja mesmo apagar esse review?' e os botões sim e não
  Quando clico em 'sim'
- Então sou redirecionado para a página com a lista dos meus reviews, onde o review feito em 23/09/2017 sobre o jogo 'world of warcraft' não constará na lista
+ Então sou redirecionado para a página com a lista dos meus reviews, onde o review sobre o jogo 'world of warcraft' não constará na lista
 
-Feature: Usuário logado pode editar um review
+
+18) Feature: Usuário logado pode editar um review
 Scenario: Editar review
 
- Dado que estou logado e na página inicial
+ Dado que estou logado como Tester e na página inicial
  Quando clico em 'meus reviews'
- Então devo ver uma lista em ordem temporal de todos os reviews que eu fiz
- Quando clico em 'editar' ao lado do review feito em 23/09/2017 sobre o jogo 'world of  warcraft' 
- Então deve aparecer uma janela com o review feito pronto para ser editado 
- Então edito o que eu quero no review 
- Quando clico em 'salvar alterações' 
- Então sou redirecionado para a página com a lista dos meus reviews, onde o review feito em  23/09/2017 sobre o jogo 'world of warcraft' está agora no topo da lista dos meus reviews
+ Então devo ver uma lista em ordem temporal de todos os meus reviews
+ Quando clico em 'editar' ao lado do review sobre o jogo 'world of  warcraft' 
+ Então deve aparecer uma janela com o review pronto para ser editado 
+ Quando eu apago tudo e escrevo "Teste edição" e clico em 'salvar alterações' 
+ Então devo ver a página com a lista dos meus reviews e "Teste edição" no campo descrição do jogo world of warcraft
 
-Feature: Usuário logado pode editar a descrição do seu perfil
-Scenario: Editar perfil
 
- Dado que estou logado na página inicial
- Quando clico em editar perfil
- Estão sou direcionado para uma página de edição do perfil
- Altero minha descrição do perfil
- Quando clico em 'salvar alterações'
- Então sou direcionado para a home page e vejo que meu perfil foi alterado
-
-Feature:  Usuário logado pode adicionar um jogo aos favoritos
+19) Feature: Usuário logado pode adicionar um jogo aos favoritos e verificar se consta na lista de favoritos
 Scenario: Adicionar aos favoritos
 
- Dado que estou logado na página inicial
- Quando digto no campo de busca 'warcraft'
+ Dado que estou logado como Tester e na página inicial
+ Quando digito no campo de busca 'warcraft'
  Então devo ver uma lista de jogos em ordem alfabética que contenham o nome 'warcraft'
  Quando clico em 'world of warcraft'
  Então eu devo ver a página com a descrição e os reviews do jogo 'world of warcraft'
  Quando clico em 'adicionar esse jogo aos favoritos'
- Então retorno ao home page e vejo que o jogo 'world of warcraft' foi adicionado a lista dos  meus favoritos (ordem temporal)
+ Então devo ver a home page e vejo a mensagem "Jogo adicionado aos favoritos"
+ Quando eu clico em "meus favoritos"
+ Então devo ver a página com a lista dos meus jogos favoritados e devo ver
+ o jogo world of warcraft por último
 
-Feature: Usuário logado pode excluir um jogo dos seus favoritos
+20) Feature: Usuário logado pode excluir um jogo dos seus favoritos
 Scenario: Exclusão de um jogo da lista de favoritos
 
- Dado que estou logado na página inicial
+ Dado que estou logado como Tester e na página inicial
+ Quando clico em "meus favoritos"
+ Então devo ver a página com a lista dos meus jogos favoritados
  Quando clico no ícone 'excluir' ao lado do jogo 'world of warcraft' na lista de favoritos
- Então é aberto uma janela com a mensagem 'Deseja excluir world of warcraft da sua lista de  favoritos' 
+ Então é aberto uma janela com a mensagem 'Deseja excluir world of warcraft da sua lista de  favoritos?' e os botões confirmar e cancelar 
  Quando eu clico em confirmar 
- Então a página inicial é atualizada e vejo que o jogo 'world of warcraft' não está mais na  minha lista de favoritos
+ Então devo ver a página com a lista dos meus jogos favoritados e que o jogo 'world of warcraft' não está mais na minha lista de favoritos
