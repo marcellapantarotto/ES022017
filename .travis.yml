@@ -8,6 +8,7 @@ script:
   - ssh-add /tmp/headshot
   - pushd app-frontend
   - npm install -g @angular/cli
+  - npm install
   - ng build --prod
   - pushd dist
   - tar cvfz /tmp/app-frontend.tar.gz ./*
