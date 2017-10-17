@@ -6,5 +6,13 @@ script:
   - eval "$(ssh-agent -s)"
   - chmod 600 /tmp/headshot
   - ssh-add /tmp/headshot
-  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "touch ~/travisWasHere"
-  - exit 0
+  - pushd app-frontend
+  - npm install -g @angular/cli
+  - ng build --prod
+  - pushd dist
+  - tar cvfz /tmp/app-frontend.tar.gz ./*
+  - popd
+  - popd
+  - $SCP /tmp/app-frontend.tar.gz $SERVER_USER@SERVER_DNS:/tmp
+  - $REMOTE_SHELL "cd /srv/headshot/app-frontend && tar xvfz /tmp/app-frontend.tar.gz"
+  - $REMOTE_SHELL "rm /tmp/app-frontend.tar.gz"
