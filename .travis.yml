@@ -15,6 +15,6 @@ script:
   - popd
   - popd
   # - $SCP /tmp/app-frontend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
-  - rsync --delete-after /tmp/app-frontend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
-  - $REMOTE_SHELL $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && tar xvfz /tmp/app-frontend.tar.gz"
-  - $REMOTE_SHELL $SERVER_USER@$SERVER_DNS "rm /tmp/app-frontend.tar.gz"
+  - scp -o StrictHostKeyChecking=no /tmp/app-frontend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
+  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && tar xvfz /tmp/app-frontend.tar.gz"
+  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "rm /tmp/app-frontend.tar.gz"
