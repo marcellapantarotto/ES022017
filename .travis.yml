@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - 8.7.0
 before_install:
-  - sudo apt-get update && sudo apt-get install chromium chromedriver -y
+  - sudo apt-get update && sudo apt-get install chromium-browser chromium-chromedriver -y
   - npm install -g @angular/cli
   - npm install
 script:
@@ -11,13 +11,12 @@ script:
   - chmod 600 /tmp/headshot
   - ssh-add /tmp/headshot
   - pushd app-frontend
-  - export CHROME_BIN=/usr/bin/chromium && ng test --single-run
+  - export CHROME_BIN=/usr/bin/chromium-browser && ng test --single-run
   - ng build --prod
   - pushd dist
   - tar cvfz /tmp/app-frontend.tar.gz ./*
   - popd
   - popd
-  # - $SCP /tmp/app-frontend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
   - scp -o StrictHostKeyChecking=no /tmp/app-frontend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
   - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && rm -Rf ./*"
   - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && tar xvfz /tmp/app-frontend.tar.gz"
