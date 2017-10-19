@@ -6,34 +6,38 @@
 # ES022017
 Engenharia de Software UnB 2/2017
 
-======== PRÉ REQUISITOS DE INSTALAÇÃO  ========
---> cd app-backend
+</br>
 
-1) PARA INSTALAR O NVM:
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+## Pré Requisitos de Instalação
+### Para Backend:
+> cd app-backend
 
-1.1) SE NÃO TIVER O 'CURL' EXECUTAR ESSE COMANDO ANTES:
-sudo apt-get install curl
+1) PARA INSTALAR O NVM:</br>
+`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash`
 
-2) INSTALAÇÃO DO NODE E NPM:
-nvm install v8.7.0
+  - SE NÃO TIVER O 'CURL' EXECUTAR ESSE COMANDO ANTES:</br>
+  `sudo apt-get install curl`
 
-3) INSTALAÇÃO DE DEPENDÊNCIAS DO BACKEND
-npm install
+2) INSTALAÇÃO DO NODE E NPM:</br>
+`nvm install v8.7.0`
 
-==== INSTALAÇÃO FRONTEND ====
---> cd app-frontend
+3) INSTALAÇÃO DE DEPENDÊNCIAS DO BACKEND:</br>
+`npm install`
 
-5) INSTALAÇÃO DO ANGULAR:
-npm install -g @angular/cli
+### Instalação Frontend
+> cd app-frontend
 
-6) INSTALAÇÃO DE DEPENDÊNCIAS DO FRONTEND
-npm install
+5) INSTALAÇÃO DO ANGULAR:</br>
+`npm install -g @angular/cli`
 
+6) INSTALAÇÃO DE DEPENDÊNCIAS DO FRONTEND:</br>
+`npm install`
 
+</br>
 
-===== Para Acompanhar o Build =====
+## Acompanhamento
+### Build:
 https://travis-ci.org/marcellapantarotto/ES022017
 
-===== Página de FRONTEND =====
+### Página de Frontend:
 https://headshot.ddns.net/
