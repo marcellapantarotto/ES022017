@@ -29,3 +29,11 @@ npm install -g @angular/cli
 
 6) INSTALAÇÃO DE DEPENDÊNCIAS DO FRONTEND
 npm install
+
+
+
+===== Para Acompanhar o Build =====
+https://travis-ci.org/marcellapantarotto/ES022017
+
+===== Página de FRONTEND =====
+https://headshot.ddns.net/
