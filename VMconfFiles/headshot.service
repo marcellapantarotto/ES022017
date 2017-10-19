@@ -1,0 +1,14 @@
+[Unit]
+Description=Headshot Service
+
+[Service]
+Type=forking
+ExecStart=/srv/headshot/serve.sh start
+ExecStop=/srv/headshot/serve.sh stop
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+User=headshot
+Group=headshot
+[Install]
+WantedBy=multi-user.target
