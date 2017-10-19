@@ -23,3 +23,12 @@ script:
   - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && rm -Rf ./*" || true
   - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && tar xvfz /tmp/app-frontend.tar.gz"
   - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "rm /tmp/app-frontend.tar.gz"
+  - pushd app-backend
+  - tar cvfz /tmp/app-backend.tar.gz app-core/ app-server/ conf.js index.js mongoInMemory.js package.json
+  - scp -o StrictHostKeyChecking=no /tmp/app-backend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
+  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "sudo systemctl stop headshot.service"
+  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-backend && rm -Rf ./*"
+  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-backend && tar xvfz /tmp/app-backend.tar.gz"
+  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "rm /tmp/app-backend.tar.gz"
+  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-backend && source ~/.nvm/nvm.sh && npm install --production"
+  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "sudo systemctl start headshot.service"
