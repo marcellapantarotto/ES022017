@@ -27,7 +27,7 @@ script:
   #install npm dependencies
   #run tests
   # - tar cvfz /tmp/app-backend.tar.gz app-core/ app-server/ conf.js index.js mongoInMemory.js package.json
-  - tar cvfz /tmp/app-backend.tar.gz conf.js index.js mongoInMemory.js package.json
+  - tar cvfz /tmp/app-backend.tar.gz index.js package.json package-lock.json
   - scp -o StrictHostKeyChecking=no /tmp/app-backend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
   - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "sudo systemctl stop headshot.service" || true
   - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-backend && rm -Rf ./*"
