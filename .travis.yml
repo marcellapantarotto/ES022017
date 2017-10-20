@@ -24,8 +24,9 @@ script:
   - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && tar xvfz /tmp/app-frontend.tar.gz"
   - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "rm /tmp/app-frontend.tar.gz"
   - pushd app-backend
-  #install npm dependencies
-  #run tests
+  - npm install -g mocha
+  - npm install
+  - mocha -R spec tests.js
   # - tar cvfz /tmp/app-backend.tar.gz app-core/ app-server/ conf.js index.js mongoInMemory.js package.json
   - tar cvfz /tmp/app-backend.tar.gz index.js package.json package-lock.json
   - scp -o StrictHostKeyChecking=no /tmp/app-backend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
