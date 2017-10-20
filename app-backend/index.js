@@ -30,6 +30,8 @@ app.get('/', function (req, res) {
   res.send(JSON.stringify(response));
 });
 
-app.listen(BACKEND_API_PORT, BACKEND_API_IP_BIND, function () {
+server = app.listen(BACKEND_API_PORT, BACKEND_API_IP_BIND, function () {
   console.log('Backend listening on ' + BACKEND_API_URL);
 });
+
+module.exports = server;
