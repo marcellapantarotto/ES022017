@@ -30,6 +30,6 @@ app.get('/', function (req, res) {
   res.send(JSON.stringify(response));
 });
 
-app.listen(BACKEND_API_PORT, BACKEND_API_IP_BIND, function () {
+app.listen(Number.parseInt(BACKEND_API_PORT), BACKEND_API_IP_BIND, function () {
   console.log('Backend listening on ' + BACKEND_API_URL);
 });
