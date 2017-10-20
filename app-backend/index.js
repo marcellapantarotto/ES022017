@@ -8,7 +8,7 @@ var MONGO_URL,
 
 if(process.env.NODE_ENV == "production"){
   MONGO_URL = process.env.MONGO_URL;
-  BACKEND_API_PORT = process.env.BACKEND_API_IP_BIND;
+  BACKEND_API_PORT = process.env.BACKEND_API_PORT;
   BACKEND_API_DNS = process.env.BACKEND_API_DNS;
   BACKEND_API_URL = process.env.BACKEND_API_URL;
   BACKEND_API_IP_BIND = process.env.BACKEND_API_IP_BIND;
