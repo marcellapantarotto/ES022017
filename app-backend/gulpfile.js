@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const mocha = require('gulp-mocha');
 const MongoInMemory = require('mongo-in-memory');
 const spawn = require('child_process').spawn;
 var node;
@@ -28,7 +29,12 @@ gulp.task('stopMongoInMemory', function(){
   }
 });
 
-gulp.task('backend', function(){
+gulp.task('tests', function(){
+  gulp.src('tests.js')
+  .pipe(mocha())
+});
+
+gulp.task('backend', ['tests'], function(){
   if(node) node.kill();
   node = spawn('node', ['index.js'], {stdio: 'inherit'})
   node.on('close', function (code) {
