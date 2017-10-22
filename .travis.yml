@@ -4,8 +4,10 @@ node_js:
 branches:
   only:
     - master
+addons:
+  ssh_known_hosts: headshot.ddns.net
 before_install:
-  - sudo apt-get update && sudo apt-get install chromium-browser chromium-chromedriver -y
+  - sudo apt-get -qq update && sudo apt-get -qq install chromium-browser chromium-chromedriver -y
   - npm install -g @angular/cli
   - npm install -g mocha
 script:
@@ -15,24 +17,24 @@ script:
   - ssh-add /tmp/headshot
   - pushd app-frontend
   - npm install
-  - export CHROME_BIN=/usr/bin/chromium-browser && ng test --single-run
+  - export CHROME_BIN=/usr/bin/chromium-browser && ng test --single-run --progress false
   - ng build --prod
   - pushd dist
   - tar cvfz /tmp/app-frontend.tar.gz ./*
   - popd
   - popd
-  - scp -o StrictHostKeyChecking=no /tmp/app-frontend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
-  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && rm -Rf ./*" || true
-  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && tar xvfz /tmp/app-frontend.tar.gz"
-  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "rm /tmp/app-frontend.tar.gz"
+  - scp /tmp/app-frontend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
+  - rsh $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && rm -Rf ./*" || true
+  - rsh $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-frontend && tar xvfz /tmp/app-frontend.tar.gz"
+  - rsh $SERVER_USER@$SERVER_DNS "rm /tmp/app-frontend.tar.gz"
   - pushd app-backend
   - npm install
   - mocha tests.js
   - tar cvfz /tmp/app-backend.tar.gz index.js package.json package-lock.json
-  - scp -o StrictHostKeyChecking=no /tmp/app-backend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
-  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "sudo systemctl stop headshot.service" || true
-  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-backend && rm -Rf ./*"
-  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-backend && tar xvfz /tmp/app-backend.tar.gz"
-  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "rm /tmp/app-backend.tar.gz"
-  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-backend && source ~/.nvm/nvm.sh && npm install --production"
-  - rsh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_DNS "sudo systemctl start headshot.service"
+  - scp /tmp/app-backend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
+  - rsh $SERVER_USER@$SERVER_DNS "sudo systemctl stop headshot.service" || true
+  - rsh $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-backend && rm -Rf ./*"
+  - rsh $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-backend && tar xvfz /tmp/app-backend.tar.gz"
+  - rsh $SERVER_USER@$SERVER_DNS "rm /tmp/app-backend.tar.gz"
+  - rsh $SERVER_USER@$SERVER_DNS "cd /srv/headshot/app-backend && source ~/.nvm/nvm.sh && npm install --production"
+  - rsh $SERVER_USER@$SERVER_DNS "sudo systemctl start headshot.service"
