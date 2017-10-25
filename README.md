@@ -45,3 +45,12 @@ https://apiheadshot.ddns.net/
 
 ### Página de Frontend:
 https://headshot.ddns.net/
+
+## Frameworks e pacotes adicionais utilizados
+
+- Angular https://angular.io/
+- Expressjs http://expressjs.com/pt-br/ testes https://github.com/visionmedia/supertest
+- Mocha https://github.com/mochajs/mocha
+- Mongoose http://mongoosejs.com/ testes https://github.com/elliotf/mocha-mongoose
+- Gulp https://gulpjs.com/
+- Mongo in memory https://www.npmjs.com/package/mongo-in-memory

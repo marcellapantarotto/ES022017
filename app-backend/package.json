@@ -24,6 +24,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-mocha": "^4.3.1",
+    "mocha-mongoose": "^1.2.0",
     "mongo-in-memory": "0.0.5",
     "supertest": "^3.0.0"
   }
