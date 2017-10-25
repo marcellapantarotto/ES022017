@@ -18,13 +18,13 @@ Engenharia de Software UnB 2/2017
 > curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
   - SE NÃO TIVER O 'CURL' EXECUTAR ESSE COMANDO ANTES:
   > sudo apt-get install curl
-1. INSTALAÇÃO DO NODE E NPM:
+2. INSTALAÇÃO DO NODE E NPM:
 > nvm install v8.7.0
-1. INSTALAÇÃO DE DEPENDÊNCIAS DO BACKEND:
+3. INSTALAÇÃO DE DEPENDÊNCIAS DO BACKEND:
 > npm install
-1. INSTALAÇÃO DO GULP:
+4. INSTALAÇÃO DO GULP:
 > npm install -g gulp-cli
-1. INSTLAÇÃO DO MOCHA:
+5. INSTLAÇÃO DO MOCHA:
 > npm install -g mocha
 
 ### Instalação Frontend
@@ -33,7 +33,7 @@ Engenharia de Software UnB 2/2017
 
 1. INSTALAÇÃO DO ANGULAR:
 > npm install -g @angular/cli
-1. INSTALAÇÃO DE DEPENDÊNCIAS DO FRONTEND:
+2. INSTALAÇÃO DE DEPENDÊNCIAS DO FRONTEND:
 > npm install
 
 ## Uso:
