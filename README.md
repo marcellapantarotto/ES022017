@@ -12,50 +12,62 @@ Engenharia de Software UnB 2/2017
 ## Pré Requisitos de Instalação
 ### Instalação Backend:
 
-> cd app-backend
+```cd app-backend```
 
 1. PARA INSTALAR O NVM:
-> curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+
+```curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash```
   - SE NÃO TIVER O 'CURL' EXECUTAR ESSE COMANDO ANTES:
-  > sudo apt-get install curl
+
+  ```sudo apt-get install curl```
+
 2. INSTALAÇÃO DO NODE E NPM:
-> nvm install v8.7.0
+
+```nvm install v8.7.0```
+
 3. INSTALAÇÃO DE DEPENDÊNCIAS DO BACKEND:
-> npm install
+
+```npm install```
+
 4. INSTALAÇÃO DO GULP:
-> npm install -g gulp-cli
+
+```npm install -g gulp-cli```
+
 5. INSTLAÇÃO DO MOCHA:
-> npm install -g mocha
+
+```npm install -g mocha```
 
 ### Instalação Frontend
 
-> cd app-frontend
+```cd app-frontend```
 
 1. INSTALAÇÃO DO ANGULAR:
-> npm install -g @angular/cli
+
+```npm install -g @angular/cli```
+
 2. INSTALAÇÃO DE DEPENDÊNCIAS DO FRONTEND:
-> npm install
+
+```npm install```
 
 ## Uso:
 ### Backend:
 
-> cd app-backend
+```cd app-backend```
 
-> npm install (Somente na primeira execução ou na adição de novos pacotes)
+```npm install``` (Somente na primeira execução ou na adição de novos pacotes)
 
-> gulp
+`gulp`
 
 O Backend está agora em modo de desenvolvimento, ele está sendo executado em http://localhost:3000/
-Para cada arquivo com a extensão .js salvo dentro da pasta app-backend (recursivamente) o servidor será
-recaregado, os testes de backend serão executados e o banco em memória será limpo.
+Para cada arquivo com a extensão .js salvo dentro da pasta app-backend (recursivamente) o servidor será recaregado, os testes de backend serão executados e o banco em memória será limpo.
 
 ### Frontend:
 
-> cd app-frontend
+```cd app-frontend```
 
-> npm install (Somente na primeira execução ou na adição de novos pacotes)
+```npm install``` (Somente na primeira execução ou na adição de novos pacotes)
 
-> ng serve
+```ng serve```
 
 O Frontend está agora em modo de desenvolvimento, ele está sendo executado em http://localhost:4200/
 Para cada arquivo salvo dentro da pasta app-frontend (recursivamente) o servidor será
