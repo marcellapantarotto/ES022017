@@ -9,7 +9,7 @@ var ReviewSchema = new Schema({
 	user: {
 		type: String,
 		ref: 'User'
-	}
+	},
 	/*
 	user: {
 		type: Schema.ObjectId,
@@ -19,11 +19,11 @@ var ReviewSchema = new Schema({
 	date:{
 		type: Date,
 		default: Date.now
-	}
+	},
 	game: {
 		type: String,
 		ref: 'Game'
-	}
+	},
 	votes: int
 })
 

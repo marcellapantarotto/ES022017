@@ -13,12 +13,12 @@ var UserSchema = new Schema({
 		admion: boolean,
 		required: true,			// obrigatory field
 		unique: true			// each username has to be unique
-	}
+	},
 	name: String,
 	img: {
 		data: buffer,
 		contentType: String
-	}
+	},
 	favorite: {
 		type: [String],
 		ref: 'Game'

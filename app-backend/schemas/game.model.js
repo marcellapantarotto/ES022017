@@ -11,11 +11,11 @@ var GameSchema = new Schema({
 	launch: {
 		type: Date,
 		default: Date.now
-	}
+	},
 	img: {
 		data: buffer,
 		contentType: String
-	}
+	},
 	details: {
 		creator: String,
 		platform: String,
@@ -25,12 +25,12 @@ var GameSchema = new Schema({
 		graphicsCard: String,
 		memory: String,
 		internet: boolean,
-	}
+	},
 	rating: int,
 	reviews: {						// amount of reviews
 		type: int,
 		ref: 'Review'
-	}			
+	}
 })
 
 module.export = mongoose.model('Game', GameSchema);
