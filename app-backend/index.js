@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+'use strict';
 var MONGO_URL,
     BACKEND_API_PORT,
     BACKEND_API_DNS,
@@ -24,7 +24,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-  response = 'Nothing here yet!\n\n';
+  var response = 'Nothing here yet!\n\n';
   res.status(200).send(response);
 });
 
