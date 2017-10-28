@@ -6,15 +6,15 @@ var Schema = mongoose.Schema;
 var imgPath = '/path/image.png';
 
 var GameSchema = new Schema({
-	id: Schema.Types.ObjectId,
+	// id: Schema.Types.ObjectId,
 	title: String,
 	launch: {
 		type: Date,
 		default: Date.now
 	},
 	img: {
-		data: buffer,
-		contentType: String
+		data: buffer
+		// contentType: String
 	},
 	details: {
 		creator: String,
@@ -26,9 +26,10 @@ var GameSchema = new Schema({
 		memory: String,
 		internet: boolean,
 	},
-	rating: int,
+	rating: Int,
 	reviews: {						// amount of reviews
-		type: int,
+		// type: Int,
+		type: Schema.Types.ObjectId,
 		ref: 'Review'
 	}
 })

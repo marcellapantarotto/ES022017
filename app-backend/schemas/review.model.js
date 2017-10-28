@@ -4,10 +4,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ReviewSchema = new Schema({
-	id: Schema.Types.ObjectId,
+	// id: Schema.Types.ObjectId,
 	content: String,
 	user: {
-		type: String,
+		// type: String,
+		type: Schema.Types.ObjectId,
 		ref: 'User'
 	},
 	/*
@@ -21,10 +22,11 @@ var ReviewSchema = new Schema({
 		default: Date.now
 	},
 	game: {
-		type: String,
+		// type: String,
+		type: Schema.Types.ObjectId,
 		ref: 'Game'
 	},
-	votes: int
+	votes: Int
 })
 
 module.export = mongoose.model('Review', ReviewSchema);
