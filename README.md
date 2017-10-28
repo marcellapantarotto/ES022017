@@ -5,36 +5,73 @@
 [![GitHub tag](https://img.shields.io/github/tag/marcellapantarotto/ES022017.svg)]()
 [![GitHub last commit](https://img.shields.io/github/last-commit/marcellapantarotto/ES022017.svg)]()
 # ES022017
+
 Engenharia de Software UnB 2/2017
 
-</br>
 
 ## Pré Requisitos de Instalação
-### Para Backend:
-> cd app-backend
+### Instalação Backend:
 
-1) PARA INSTALAR O NVM:</br>
-`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash`
+```cd app-backend```
 
-  - SE NÃO TIVER O 'CURL' EXECUTAR ESSE COMANDO ANTES:</br>
-  `sudo apt-get install curl`
+1. PARA INSTALAR O NVM:
 
-2) INSTALAÇÃO DO NODE E NPM:</br>
-`nvm install v8.7.0`
+```curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash```
+  - SE NÃO TIVER O 'CURL' EXECUTAR ESSE COMANDO ANTES:
 
-3) INSTALAÇÃO DE DEPENDÊNCIAS DO BACKEND:</br>
-`npm install`
+  ```sudo apt-get install curl```
+
+2. INSTALAÇÃO DO NODE E NPM:
+
+```nvm install v8.7.0```
+
+3. INSTALAÇÃO DE DEPENDÊNCIAS DO BACKEND:
+
+```npm install```
+
+4. INSTALAÇÃO DO GULP:
+
+```npm install -g gulp-cli```
+
+5. INSTLAÇÃO DO MOCHA:
+
+```npm install -g mocha```
 
 ### Instalação Frontend
-> cd app-frontend
 
-5) INSTALAÇÃO DO ANGULAR:</br>
-`npm install -g @angular/cli`
+```cd app-frontend```
 
-6) INSTALAÇÃO DE DEPENDÊNCIAS DO FRONTEND:</br>
-`npm install`
+1. INSTALAÇÃO DO ANGULAR:
 
-</br>
+```npm install -g @angular/cli```
+
+2. INSTALAÇÃO DE DEPENDÊNCIAS DO FRONTEND:
+
+```npm install```
+
+## Uso:
+### Backend:
+
+```cd app-backend```
+
+```npm install``` (Somente na primeira execução ou na adição de novos pacotes)
+
+`gulp`
+
+O Backend está agora em modo de desenvolvimento, ele está sendo executado em http://localhost:3000/
+Para cada arquivo com a extensão .js salvo dentro da pasta app-backend (recursivamente) o servidor será recaregado, os testes de backend serão executados e o banco em memória será limpo.
+
+### Frontend:
+
+```cd app-frontend```
+
+```npm install``` (Somente na primeira execução ou na adição de novos pacotes)
+
+```ng serve```
+
+O Frontend está agora em modo de desenvolvimento, ele está sendo executado em http://localhost:4200/
+Para cada arquivo salvo dentro da pasta app-frontend (recursivamente) o servidor será
+recaregado.
 
 ## Acompanhamento
 ### Build:
