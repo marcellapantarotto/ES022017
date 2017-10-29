@@ -29,4 +29,4 @@ var ReviewSchema = new Schema({
 	votes: Int
 })
 
-module.export = mongoose.model('Review', ReviewSchema);
+module.exports = mongoose.model('Review', ReviewSchema);
