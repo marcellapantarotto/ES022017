@@ -23,20 +23,40 @@ describe('Testing routes', function () {
 });
 
 describe('Testing models', function(){
-  const mongoose = require('mongoose');
-  const chai = require('chai');
-  const dbURI = 'mongodb://localhost/test';
+  var mongoose = require('mongoose');
+  var chai = require('chai');
+  var MongoInMemory = require('mongo-in-memory');
+  var mongoUri;
+  var mongo;
 
-  mongoose.Promise = global.Promise;
-  var clearDB  = require('mocha-mongoose')(dbURI)
   var Test = require('./schemas/test.model');
   var expect = chai.expect;
   var assert = chai.assert;
   chai.should();
+  mongoose.Promise = global.Promise;
 
   beforeEach(function(done){
-    if (mongoose.connection.db) return done();
-    mongoose.connect(clearDB, donen);
+    var mongoTestPort = 8000;
+    mongo = new MongoInMemory(mongoTestPort);
+    mongo.start(function(error, config){
+      if(error){
+        console.error(error);
+      }else{
+        mongoUri = mongo.getMongouri("headshot");
+        mongoose.connect(mongoUri);
+      }
+    });
+    done();
+  });
+
+  afterEach(function(){
+    mongoose.connection.close();
+    mongo.stop(function(error){
+      if(error){
+        console.error(error);
+      }
+      console.log('Stoped MongoInMemory');
+    });
   });
 
   it('tests Test model insertion on database', function testTestInsertion(done){
@@ -45,6 +65,5 @@ describe('Testing models', function(){
       if(err) console.error(err);
       done();
     });
-    // done();
   });
 });
