@@ -12,47 +12,48 @@ Engenharia de Software UnB 2/2017
 ## Pré Requisitos de Instalação
 ### Instalação Backend:
 
-```cd app-backend```
+> cd app-backend
 
-1. PARA INSTALAR O NVM:
+1. Para instalar o NVM:
 
 ```curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash```
-  - SE NÃO TIVER O 'CURL' EXECUTAR ESSE COMANDO ANTES:
+
+  - Se não tiver o 'curl', executar esse comando antes:
 
   ```sudo apt-get install curl```
 
-2. INSTALAÇÃO DO NODE E NPM:
+2. Instalação do Node e NPM:
 
 ```nvm install v8.7.0```
 
-3. INSTALAÇÃO DE DEPENDÊNCIAS DO BACKEND:
+3. Instalação de dependências do Backend:
 
 ```npm install```
 
-4. INSTALAÇÃO DO GULP:
+4. Instalação do Gulp:
 
 ```npm install -g gulp-cli```
 
-5. INSTLAÇÃO DO MOCHA:
+5. Instalação do Mocha:
 
 ```npm install -g mocha```
 
 ### Instalação Frontend
 
-```cd app-frontend```
+> cd app-frontend
 
-1. INSTALAÇÃO DO ANGULAR:
+1. Instalação do Angular:
 
 ```npm install -g @angular/cli```
 
-2. INSTALAÇÃO DE DEPENDÊNCIAS DO FRONTEND:
+2. Instalação de dependências do Frontend:
 
 ```npm install```
 
 ## Uso:
 ### Backend:
 
-```cd app-backend```
+> cd app-backend
 
 ```npm install``` (Somente na primeira execução ou na adição de novos pacotes)
 
@@ -63,7 +64,7 @@ Para cada arquivo com a extensão .js salvo dentro da pasta app-backend (recursi
 
 ### Frontend:
 
-```cd app-frontend```
+> cd app-frontend
 
 ```npm install``` (Somente na primeira execução ou na adição de novos pacotes)
 
