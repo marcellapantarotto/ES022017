@@ -64,7 +64,7 @@ Para cada arquivo com a extensão .js salvo dentro da pasta app-backend (recursi
 
 ### Frontend:
 
-```cd app-frontend```
+> cd app-frontend
 
 ```npm install``` (Somente na primeira execução ou na adição de novos pacotes)
 
