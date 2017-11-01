@@ -55,7 +55,6 @@ describe('Testing models', function(){
       if(error){
         console.error(error);
       }
-      console.log('Stoped MongoInMemory');
     });
   });
 
