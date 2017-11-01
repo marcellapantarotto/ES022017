@@ -58,9 +58,51 @@ describe('Testing models', function(){
     });
   });
 
-  it('tests Test model insertion on database', function testTestInsertion(done){
-    var test = new Test({name: "testname", age: 10});
+  it('Tests Test model insertion on database.', function testTestInsert(done){
+    var test = new Test({
+      name: "testname",
+      age: 10
+    });
     test.save(function(err, res){
+      if(err) console.error(err);
+      done();
+    });
+  });
+  it('Tests Test model find on database.', function testTestFind(){
+    var test = new Test({
+      name: "testname",
+      age: 10
+    });
+    test.save(function(err, res){
+      if(err) console.error(err);
+      Test.findOne({
+        age: 10
+      }, function(err, singleDoc){
+        if(err) console.error(err);
+        done();
+      });
+    });
+  });
+  it('tests Test wrong format protection.', function testTestWrongFormat(){
+    var test = new Test({
+      name: "testname",
+      age: 10,
+      invalidAttribute: true
+    });
+    test.save(function(err, res){
+      if(err) done();
+    });
+  });
+  it('Tests Test delete from database.', function testTestRemove(){
+    var id;
+    var test = new Test({
+      name: "testname",
+      age: 10
+    });
+    id = test._id;
+    Test.remove({
+      _id: id
+    }, function(err){
       if(err) console.error(err);
       done();
     });
