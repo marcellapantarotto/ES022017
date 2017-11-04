@@ -12,7 +12,7 @@ gulp.task('startMongoInMemory', ['stopMongoInMemory'], function() {
           console.error(error);
       }else{
           var mongouri = mongoServerInstance.getMongouri("headshot");
-          console.log('Started MongoInMemory');
+          console.log('Started devMode MongoInMemory');
           console.log('Monggo URI: ' + mongouri);
       }
   });
@@ -46,7 +46,8 @@ gulp.task('backend', ['tests'], function(){
 
 
 gulp.task('watchBackend', ['backend'], function(){
-  gulp.watch(['./index.js', './**/*.js'], ['backend', 'startMongoInMemory']);
+  // gulp.watch(['./index.js', './**/*.js'], ['backend', 'startMongoInMemory']);
+  gulp.watch(['./index.js', './**/*.js'], ['backend']);
 });
 
 process.on('exit', function() {

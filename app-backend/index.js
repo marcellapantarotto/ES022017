@@ -29,7 +29,7 @@ app.get('/', function (req, res) {
 });
 
 var server = app.listen(Number.parseInt(BACKEND_API_PORT), BACKEND_API_IP_BIND, function () {
-  console.log('Backend listening on ' + BACKEND_API_URL);
+  // console.log('Backend listening on ' + BACKEND_API_URL);
 });
 
 module.exports = server;
