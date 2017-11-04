@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var imgPath = '/path/image.png';
 
 var UserSchema = new Schema({
-	id: Schema.Types.ObjectId,
+	// id: Schema.Types.ObjectId,
 	username: {
 		type: String,
 		required: true,			// obrigatory field
@@ -19,8 +19,8 @@ var UserSchema = new Schema({
 		// contentType: String
 	},
 	favorite: {
-		type: [String],
-		ref: 'Game'
+		type: [String]
+		// ref: 'Game'
 	}
 });
 

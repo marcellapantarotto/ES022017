@@ -2,19 +2,39 @@
 
 describe('Testing routes', function () {
   const request = require('supertest');
+  const chai = require('chai');
+  const mongoose = require('mongoose');
+
+  var expect = chai.expect;
+  var assert = chai.assert;
+  chai.should();
   var server;
+
   beforeEach(function () {
     server = require('./index');
   });
+
   afterEach(function () {
     server.close();
   });
+
   it('responds to /', function testSlash(done) {
   request(server)
     .get('/')
     .expect('Nothing here yet!\n\n')
     .expect(200, done);
   });
+
+  // it('Tests user creation.', function testUserCreation(done){
+  //   request(server)
+  //   .post('/createuser')
+  //   .send({
+  //     username: "TestUser",
+  //     name: "Usuario fulano de tal"
+  //   })
+
+  // });
+
   it('404 everything else', function testPath(done) {
     request(server)
       .get('/foo/bar')
@@ -24,15 +44,16 @@ describe('Testing routes', function () {
 
 describe('Testing models', function(){
   var mongoose = require('mongoose');
-  var chai = require('chai');
+  // var chai = require('chai');
   var MongoInMemory = require('mongo-in-memory');
   var mongoUri;
   var mongo;
 
   var Test = require('./schemas/test.model');
-  var expect = chai.expect;
-  var assert = chai.assert;
-  chai.should();
+  var User = require('./schemas/user.model');
+  // var expect = chai.expect;
+  // var assert = chai.assert;
+  // chai.should();
   mongoose.Promise = global.Promise;
 
   beforeEach(function(done){
@@ -43,7 +64,7 @@ describe('Testing models', function(){
         console.error(error);
       }else{
         mongoUri = mongo.getMongouri("headshot");
-        mongoose.connect(mongoUri);
+        mongoose.connect(mongoUri, {useMongoClient: true});
       }
     });
     done();
@@ -68,7 +89,8 @@ describe('Testing models', function(){
       done();
     });
   });
-  it('Tests Test model find on database.', function testTestFind(){
+
+  it('Tests Test model find on database.', function testTestFind(done){
     var test = new Test({
       name: "testname",
       age: 10
@@ -83,7 +105,8 @@ describe('Testing models', function(){
       });
     });
   });
-  it('tests Test wrong format protection.', function testTestWrongFormat(){
+
+  it('tests Test wrong format protection.', function testTestWrongFormat(done){
     var test = new Test({
       name: "testname",
       age: 10,
@@ -93,7 +116,8 @@ describe('Testing models', function(){
       if(err) done();
     });
   });
-  it('Tests Test delete from database.', function testTestRemove(){
+
+  it('Tests Test delete from database.', function testTestRemove(done){
     var id;
     var test = new Test({
       name: "testname",
@@ -103,6 +127,19 @@ describe('Testing models', function(){
     Test.remove({
       _id: id
     }, function(err){
+      if(err) console.error(err);
+      done();
+    });
+  });
+
+  it('Tests User model insertion on database.', function testUserInsert(done){
+    var user = new User({
+      username: "TestUser",
+      admin: true,
+      name: "Usuario fulano de tal",
+      img: new Buffer("test")
+    });
+    user.save(function(err, res){
       if(err) console.error(err);
       done();
     });
