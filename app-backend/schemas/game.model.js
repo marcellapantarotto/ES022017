@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+// var Review = require('./review.model');
 // var imgPath = '/path/image.png';
 
 var GameSchema = new Schema({
@@ -13,7 +14,7 @@ var GameSchema = new Schema({
 		default: Date.now
 	},
 	img: {
-		data: buffer
+		data: Buffer
 		// contentType: String
 	},
 	details: {
@@ -24,9 +25,9 @@ var GameSchema = new Schema({
 		ram: String,
 		graphicsCard: String,
 		memory: String,
-		internet: boolean,
+		internet: Boolean,
 	},
-	rating: Int,
+	rating: Number,
 	reviews: {						// amount of reviews
 		// type: Int,
 		type: Schema.Types.ObjectId,

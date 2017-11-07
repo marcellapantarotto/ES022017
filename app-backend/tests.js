@@ -2,12 +2,12 @@
 
 describe('Testing routes', function () {
   const request = require('supertest');
-  const chai = require('chai');
-  const mongoose = require('mongoose');
+  // const chai = require('chai');
+  // const mongoose = require('mongoose');
 
-  var expect = chai.expect;
-  var assert = chai.assert;
-  chai.should();
+  // var expect = chai.expect;
+  // var assert = chai.assert;
+  // chai.should();
   var server;
 
   beforeEach(function () {
@@ -44,17 +44,17 @@ describe('Testing routes', function () {
 
 describe('Testing models', function(){
   var mongoose = require('mongoose');
-  // var chai = require('chai');
+  mongoose.Promise = global.Promise;
+  var chai = require('chai');
   var MongoInMemory = require('mongo-in-memory');
   var mongoUri;
   var mongo;
 
   var Test = require('./schemas/test.model');
   var User = require('./schemas/user.model');
-  // var expect = chai.expect;
-  // var assert = chai.assert;
-  // chai.should();
-  mongoose.Promise = global.Promise;
+  var expect = chai.expect;
+  var assert = chai.assert;
+  chai.should();
 
   beforeEach(function(done){
     var mongoTestPort = 8000;
@@ -65,17 +65,18 @@ describe('Testing models', function(){
       }else{
         mongoUri = mongo.getMongouri("headshot");
         mongoose.connect(mongoUri, {useMongoClient: true});
+        done();
       }
     });
-    done();
   });
 
-  afterEach(function(){
+  afterEach(function(done){
     mongoose.connection.close();
     mongo.stop(function(error){
       if(error){
         console.error(error);
       }
+      done();
     });
   });
 
@@ -112,8 +113,19 @@ describe('Testing models', function(){
       age: 10,
       invalidAttribute: true
     });
+    var id = test._id;
     test.save(function(err, res){
-      if(err) done();
+      if(err){
+        console.error(err);
+      }
+      Test.findOne({
+        _id: id
+      }, function(err, singleDoc){
+        if(err) console.error(err);
+        // A protecao de formato oferecida pelo mongoose somente retira atributos nao declarados no schema.
+        expect(singleDoc).to.not.have.property('invalidAttribute');
+        done();
+      });
     });
   });
 
