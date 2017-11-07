@@ -92,3 +92,4 @@ https://headshot.ddns.net/
 - Mongoose http://mongoosejs.com/ testes https://github.com/elliotf/mocha-mongoose
 - Gulp https://gulpjs.com/
 - Mongo in memory https://www.npmjs.com/package/mongo-in-memory
+- Chai http://chaijs.com/
