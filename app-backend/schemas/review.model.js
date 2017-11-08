@@ -24,7 +24,7 @@ var ReviewSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'Game'
 	},
-	votes: Int
+	votes: Number
 })
 
 module.exports = mongoose.model('Review', ReviewSchema);

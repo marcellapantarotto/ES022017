@@ -53,12 +53,12 @@ describe('Testing models', function(){
   var Test = require('./schemas/test.model');
   var User = require('./schemas/user.model');
   var Game = require('./schemas/game.model');
-  // var Review = require('./schemas/review.model');
+  var Review = require('./schemas/review.model');
 
   var expect = chai.expect;
   var assert = chai.assert;
   chai.should();
-  // mongoose.Promise = global.Promise;
+  mongoose.Promise = global.Promise;
 
   beforeEach(function(done){
     var mongoTestPort = 8000;
