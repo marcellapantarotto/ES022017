@@ -127,7 +127,7 @@ describe('Testing models', function(){
       }, function(err, singleDoc){
         if(err) console.error(err);
         // A protecao de formato oferecida pelo mongoose somente retira atributos nao declarados no schema.
-        expect(singleDoc).to.not.have.proprety('invalidAttribute');
+        expect(singleDoc).to.not.have.property('invalidAttribute');
         done();
       });
 
