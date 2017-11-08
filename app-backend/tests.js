@@ -2,12 +2,12 @@
 
 describe('Testing routes', function () {
   const request = require('supertest');
-  const chai = require('chai');
-  const mongoose = require('mongoose');
+  // const chai = require('chai');
+  // const mongoose = require('mongoose');
 
-  var expect = chai.expect;
-  var assert = chai.assert;
-  chai.should();
+  // var expect = chai.expect;
+  // var assert = chai.assert;
+  // chai.should();
   var server;
 
   beforeEach(function () {
@@ -58,7 +58,7 @@ describe('Testing models', function(){
   var expect = chai.expect;
   var assert = chai.assert;
   chai.should();
-  mongoose.Promise = global.Promise;
+  // mongoose.Promise = global.Promise;
 
   beforeEach(function(done){
     var mongoTestPort = 8000;
@@ -72,7 +72,6 @@ describe('Testing models', function(){
         done();
       }
     });
-    done();
   });
 
   afterEach(function(done){
