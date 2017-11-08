@@ -7,26 +7,30 @@ var Schema = mongoose.Schema;
 
 var GameSchema = new Schema({
 	// id: Schema.Types.ObjectId,
-	title: String,
+	title:{
+		type: String,
+		required: true,			// obrigatory field
+		unique: true			// each username has to be unique
+	},
 	launch: {
 		type: Date,
 		default: Date.now
 	},
 	img: {
-		data: buffer
+		data: Buffer
 		// contentType: String
 	},
 	details: {
 		creator: String,
-		platform: String,
+		console: String,
 		opSys: String,
 		processor: String,
 		ram: String,
 		graphicsCard: String,
 		memory: String,
-		internet: boolean,
+		internet: Boolean,
 	},
-	rating: Int,
+	rating: Number,
 	reviews: {						// amount of reviews
 		// type: Int,
 		type: Schema.Types.ObjectId,

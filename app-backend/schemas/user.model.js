@@ -3,7 +3,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var imgPath = '/path/image.png';
+// var Game = require('./game.model');
+// var imgPath = '/path/image.png';
 
 var UserSchema = new Schema({
 	// id: Schema.Types.ObjectId,
@@ -19,8 +20,8 @@ var UserSchema = new Schema({
 		// contentType: String
 	},
 	favorite: {
-		type: [String]
-		// ref: 'Game'
+		type: [String],
+		ref: 'Game'
 	}
 });
 
