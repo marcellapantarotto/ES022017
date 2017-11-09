@@ -23,10 +23,15 @@ if(process.env.NODE_ENV == "production"){
 var express = require('express');
 var app = express();
 
+var CreateUser = require('./routes/createuser');
+
+app.post('/createuser', CreateUser);
+
 app.get('/', function (req, res) {
   var response = 'Nothing here yet!\n\n';
   res.status(200).send(response);
 });
+
 
 var server = app.listen(Number.parseInt(BACKEND_API_PORT), BACKEND_API_IP_BIND, function () {
   // console.log('Backend listening on ' + BACKEND_API_URL);

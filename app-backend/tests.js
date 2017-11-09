@@ -1,14 +1,16 @@
 'use strict';
 
 describe('Testing routes', function () {
-  const request = require('supertest');
-  // const chai = require('chai');
-  // const mongoose = require('mongoose');
+  var chai = require('chai');
+  var chaiHttp = require('chai-http');
+  var mongoose = require('mongoose');
 
-  // var expect = chai.expect;
-  // var assert = chai.assert;
-  // chai.should();
+  var expect = chai.expect;
+  var assert = chai.assert;
+  var should = chai.should();
   var server;
+
+  chai.use(chaiHttp);
 
   beforeEach(function () {
     server = require('./index');
@@ -19,26 +21,36 @@ describe('Testing routes', function () {
   });
 
   it('responds to /', function testSlash(done) {
-  request(server)
+    chai.request(server)
     .get('/')
-    .expect('Nothing here yet!\n\n')
-    .expect(200, done);
+    .end(function(err, res){
+      assert(res, 'Nothing here yet!\n\n');
+      res.should.have.status(200);
+      done();
+    });
   });
 
-  // it('Tests user creation.', function testUserCreation(done){
-  //   request(server)
-  //   .post('/createuser')
-  //   .send({
-  //     username: "TestUser",
-  //     name: "Usuario fulano de tal"
-  //   })
-
-  // });
+  it('Tests user creation.', function testUserCreation(done){
+    chai.request(server)
+    .post('/createuser')
+    .send({
+      username: "testuser",
+      name: "Fulano de Tal"
+    })
+    .end(function(err, res){
+      res.should.have.status(200);
+      res.body.should.be.a('String');
+      done();
+    });
+  });
 
   it('404 everything else', function testPath(done) {
-    request(server)
-      .get('/foo/bar')
-      .expect(404, done);
+    chai.request(server)
+    .get('/foo/bar')
+    .end(function(err, res){
+      res.should.have.status(404);
+      done();
+    });
   });
 });
 
