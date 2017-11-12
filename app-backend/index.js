@@ -20,12 +20,16 @@ if(process.env.NODE_ENV == "production"){
   BACKEND_API_IP_BIND = '127.0.0.1'
 }
 
+var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 
-var CreateUser = require('./routes/createuser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/createuser', CreateUser);
+require('./routes/user')(app);
+
+// app.post('/createuser', CreateUser);
 
 app.get('/', function (req, res) {
   var response = 'Nothing here yet!\n\n';

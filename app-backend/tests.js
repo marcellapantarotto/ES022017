@@ -39,7 +39,7 @@ describe('Testing routes', function () {
     })
     .end(function(err, res){
       res.should.have.status(200);
-      res.body.should.be.a('String');
+      res.body.should.be.a('Object');
       done();
     });
   });
