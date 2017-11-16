@@ -13,7 +13,6 @@ module.exports = function(app){
                 console.error(err);
                 res.status(500).send(err);
             }else{
-                console.log({id: doc._id});
                 res
                 .status(200)
                 .send({id: doc._id});

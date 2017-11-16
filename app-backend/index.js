@@ -33,8 +33,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./routes/user')(app);
 
-// app.post('/createuser', CreateUser);
-
 app.get('/', function (req, res) {
   var response = 'Nothing here yet!\n\n';
   res.status(200).send(response);
