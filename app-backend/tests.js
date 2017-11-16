@@ -3,7 +3,6 @@
 describe('Testing routes', function () {
   var chai = require('chai');
   var chaiHttp = require('chai-http');
-  var mongoose = require('mongoose');
 
   var expect = chai.expect;
   var assert = chai.assert;
