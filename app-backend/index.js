@@ -13,17 +13,21 @@ if(process.env.NODE_ENV == "production"){
   BACKEND_API_URL = process.env.BACKEND_API_URL;
   BACKEND_API_IP_BIND = process.env.BACKEND_API_IP_BIND;
 }else{
-  MONGO_URL = 'mongodb://127.0.0.1:27017/headshot';
+  MONGO_URL = 'mongodb://headshot:headshot@127.0.0.1:27017/headshot';
   BACKEND_API_PORT = 3000;
   BACKEND_API_DNS = 'localhost';
   BACKEND_API_URL = 'http://' + BACKEND_API_DNS + ':' + BACKEND_API_PORT;
   BACKEND_API_IP_BIND = '127.0.0.1'
 }
 
+var mongoose = require('mongoose');
+
 var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 
+mongoose.Promise = global.Promise;
+mongoose.connect(MONGO_URL, {useMongoClient: true});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
