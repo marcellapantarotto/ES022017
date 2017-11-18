@@ -11,7 +11,9 @@ module.exports = function(app){
         user.save(function(err, doc){
             if(err){
                 console.error(err);
-                res.status(500).send(err);
+                res
+                .status(500)
+                .send(err);
             }else{
                 res
                 .status(200)
@@ -19,4 +21,20 @@ module.exports = function(app){
             }
         });
     });
+    // app.get('/user/:id', function(req, res){
+    //     User.findOne({
+    //         _id: req.params.id
+    //     }, function(err, doc){
+    //         if(err){
+    //             console.error(err);
+    //             res
+    //             .status(500)
+    //             .send(err);
+    //         }else{
+    //             res
+    //             .status(200)
+    //             .send(doc);
+    //         }
+    //     });
+    // });
 }

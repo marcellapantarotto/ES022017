@@ -3,20 +3,41 @@
 describe('Testing routes', function () {
   var chai = require('chai');
   var chaiHttp = require('chai-http');
+  var MongoInMemory = require('mongo-in-memory');
+  var mongoUri;
+  var mongo;
 
   var expect = chai.expect;
   var assert = chai.assert;
   var should = chai.should();
   var server;
-
   chai.use(chaiHttp);
 
-  beforeEach(function () {
-    server = require('./index');
+  beforeEach(function(done){
+    var mongoTestPort = 8888;
+    mongo = new MongoInMemory(mongoTestPort);
+    mongo.start(function(error, config){
+      if(error){
+        console.error(error);
+      }else{
+        mongoUri = mongo.getMongouri("headshot");
+        server = require('./index');
+        console.log("Server UP");
+        done();
+      }
+    });
   });
 
-  afterEach(function () {
+  afterEach(function(done){
     server.close();
+    console.log('server down')
+    mongo.stop(function(error){
+      if(error){
+        console.error(error);
+      }
+      console.log('mongo down')
+      done();
+    });
   });
 
   it('responds to /', function testSlash(done) {
@@ -60,6 +81,7 @@ describe('Testing models', function(){
   var MongoInMemory = require('mongo-in-memory');
   var mongoUri;
   var mongo;
+  var db;
 
   var Test = require('./schemas/test.model');
   var User = require('./schemas/user.model');
@@ -68,14 +90,15 @@ describe('Testing models', function(){
   chai.should();
 
   beforeEach(function(done){
-    var mongoTestPort = 8000;
+    var mongoTestPort = 7777;
     mongo = new MongoInMemory(mongoTestPort);
     mongo.start(function(error, config){
       if(error){
         console.error(error);
       }else{
         mongoUri = mongo.getMongouri("headshot");
-        mongoose.connect(mongoUri, {useMongoClient: true});
+        db = mongoose.connect(mongoUri, {useMongoClient: true});
+        console.log('Mongo UP mongoURI ' + mongoUri);
         done();
       }
     });
@@ -87,6 +110,7 @@ describe('Testing models', function(){
       if(error){
         console.error(error);
       }
+      console.log('Mongo Down');
       done();
     });
   });
