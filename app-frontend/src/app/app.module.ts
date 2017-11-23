@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 
@@ -13,7 +15,8 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
