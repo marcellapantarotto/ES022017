@@ -29,7 +29,7 @@ script:
   - rsh $SERVER_USER@$SERVER_DNS "rm /tmp/app-frontend.tar.gz"
   - pushd app-backend
   - npm install
-  - mocha tests.js
+  - export NODE_ENV='test' && mocha tests.js && unset NODE_ENV
   - tar cvfz /tmp/app-backend.tar.gz index.js package.json package-lock.json
   - scp /tmp/app-backend.tar.gz $SERVER_USER@$SERVER_DNS:/tmp
   - rsh $SERVER_USER@$SERVER_DNS "sudo systemctl stop headshot.service" || true
