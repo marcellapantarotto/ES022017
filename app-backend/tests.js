@@ -30,7 +30,6 @@ describe('Testing models', function(){
       }else{
         mongoUri = mongo.getMongouri("headshot");
         db = mongoose.connect(mongoUri, {useMongoClient: true});
-        console.log('Mongo UP mongoURI ' + mongoUri);
         done();
       }
     });
@@ -42,7 +41,6 @@ describe('Testing models', function(){
       if(error){
         console.error(error);
       }
-      console.log('Mongo Down');
       done();
     });
   });
@@ -217,7 +215,6 @@ describe('Testing routes', function () {
       }else{
         mongoUri = mongo.getMongouri("headshot");
         server = require('./index');
-        console.log("Server UP");
         done();
       }
     });
@@ -225,12 +222,10 @@ describe('Testing routes', function () {
 
   afterEach(function(done){
     server.close();
-    console.log('server down')
     mongo.stop(function(error){
       if(error){
         console.error(error);
       }
-      console.log('mongo down')
       done();
     });
   });
