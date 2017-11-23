@@ -1,15 +1,15 @@
-<section class="content-header">
+<section class="content-header" style="margin-top:70px">
+    <h1>Welcome to {{AppComponent.title}}!</h1>
 </section>
 
 <section class="content">
-  <h1>Welcome to {{title}}!</h1>
 
   <div class="jumbotron welcome-jumbotron">
     <div class="card-principal" style="width: 20rem;">
        <img class="card-img-top" src="/assets/img/head_shot.jpg" alt="Card image cap">
        <div class="card-body">
         <p class="card-text">Usuário anônimo.</p>
-        <a href="#" class="btn btn-primary">Fazer login</a>
+        <a [routerLink]="['/login']" class="btn btn-primary">Fazer login</a>
 
        </div>
     </div>
