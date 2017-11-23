@@ -131,6 +131,7 @@ describe('Testing routes', function () {
   var assert = chai.assert;
   var should = chai.should();
   var server;
+  var User = require('./schemas/user.model');
   chai.use(chaiHttp);
 
   beforeEach(function(done){
@@ -170,7 +171,7 @@ describe('Testing routes', function () {
     });
   });
 
-  it('Tests user creation.', function testUserCreation(done){
+  it('Tests user creation(get).', function testUserCreation(done){
     chai.request(server)
     .post('/createuser')
     .send({
@@ -181,6 +182,67 @@ describe('Testing routes', function () {
       res.should.have.status(200);
       res.body.should.be.a('Object');
       done();
+    });
+  });
+
+  it('Tests user retrieval(get)', function testsUserRetrieval(done){
+    var testUser = new User({
+      username: "TestUser",
+      admin: true,
+      name: "Usuario fulano de tal",
+      img: new Buffer("test")
+    });
+    testUser.save(function(err, doc){
+      assert.isNotOk(err);
+      chai.request(server)
+      .get('/user/' + doc._id)
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.body.should.be.a('Object');
+        done();
+      });
+    });
+  });
+
+  it('Tests user update(put)', function testsUserUpdate(done){
+    var testUser = new User({
+      username: "TestUser",
+      admin: true,
+      name: "Usuario fulano de tal",
+      img: new Buffer("test")
+    });
+    testUser.save(function(err, doc){
+      assert.isNotOk(err);
+      chai.request(server)
+        .put('/user/' + doc._id)
+        .send({username: "NewUserName"})
+        .end(function(err, res){
+          res.should.have.status(200);
+          res.body.should.be.a('Object');
+          User.findOne({_id : doc._id}, function(err, newDoc){
+            assert.isNotOk(err);
+            assert.equal(newDoc.username, "NewUserName");
+            done();
+          });
+        });
+    });
+  });
+
+  it('Tests user removal(delete)', function testsUserRemoval(done){
+    var testUser = new User({
+      username: "TestUser",
+      admin: true,
+      name: "Usuario qualquer",
+      img: new Buffer("test")
+    });
+    testUser.save(function(err, doc){
+      assert.isNotOk(err);
+      chai.request(server)
+      .delete('/user/' + doc._id)
+      .end(function(err, res){
+        res.should.have.status(200);
+        done();
+      });
     });
   });
 
