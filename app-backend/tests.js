@@ -3,6 +3,7 @@
 
 describe('Testing models', function(){
   var mongoose = require('mongoose');
+
   mongoose.Promise = global.Promise;
   var chai = require('chai');
   var MongoInMemory = require('mongo-in-memory');
@@ -12,9 +13,13 @@ describe('Testing models', function(){
 
   var Test = require('./schemas/test.model');
   var User = require('./schemas/user.model');
+  var Game = require('./schemas/game.model');
+  var Review = require('./schemas/review.model');
+
   var expect = chai.expect;
   var assert = chai.assert;
   chai.should();
+  mongoose.Promise = global.Promise;
 
   beforeEach(function(done){
     var mongoTestPort = 7777;
@@ -75,11 +80,11 @@ describe('Testing models', function(){
       age: 10,
       invalidAttribute: true
     });
-    var id = test._id;
+    var id = test._id
     test.save(function(err, res){
       if(err){
         console.error(err);
-      }
+      };
       Test.findOne({
         _id: id
       }, function(err, singleDoc){
@@ -88,6 +93,7 @@ describe('Testing models', function(){
         expect(singleDoc).to.not.have.property('invalidAttribute');
         done();
       });
+
     });
   });
 
@@ -106,6 +112,7 @@ describe('Testing models', function(){
     });
   });
 
+//----------------------------- USER TESTS ------------------------------------
   it('Tests User model insertion on database.', function testUserInsert(done){
     var user = new User({
       username: "TestUser",
@@ -114,6 +121,73 @@ describe('Testing models', function(){
       img: new Buffer("test")
     });
     user.save(function(err, res){
+      if(err) console.error(err);
+      done();
+    });
+  });
+
+  it('Tests User delete from database.', function testUserRemove(done){
+    var id;
+    var user = new User({
+      username: "TestUser",
+      admin: true,
+      name: "Usuario fulano de tal",
+      img: new Buffer("test")
+    });
+    id = user._id;
+    user.remove({
+      _id: id
+    }, function(err){
+      if(err) console.error(err);
+      done();
+    });
+  });
+
+//----------------------------- GAME TESTS ------------------------------------
+  it('Tests Game model insertion on database.', function testGameInsert(done){
+    var game = new Game({
+      title: "TestGame"
+    });
+    game.save(function(err, res){
+      if(err) console.error(err);
+      done();
+    });
+  });
+
+  it('Tests Game delete from database.', function testGameRemove(done){
+    var id;
+    var game = new Game({
+      title: "TestGame"
+    });
+    id = game._id;
+    game.remove({
+      _id: id
+    }, function(err){
+      if(err) console.error(err);
+      done();
+    });
+  });
+
+//----------------------------- REVIEW TESTS ------------------------------------
+  it('Tests Review model insertion on database.', function testReviewInsert(done){
+    var review = new Review({
+      content: "TestReview"
+    });
+    review.save(function(err, res){
+      if(err) console.error(err);
+      done();
+    });
+  });
+
+  it('Tests Review delete from database.', function testReviewRemove(done){
+    var id;
+    var review = new Review({
+      title: "TestReview"
+    });
+    id = review._id;
+    review.remove({
+      _id: id
+    }, function(err){
       if(err) console.error(err);
       done();
     });

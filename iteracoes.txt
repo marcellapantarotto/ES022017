@@ -34,7 +34,10 @@ Decisões de versionamento: node 8, angular.io 4, express 4, mongoose 4
 
 12/10/2017 - 16/10/2017
 Desenvolvimento da VM - necessidade: conta no google e acesso ao google cloud
-criaçao de chaves SSH, configuraçao de proxy em NGINX, geraçao do certificado SSL - usando let's encrypt, instalaçao de nvm e node na maquina de produçao, configuraçao DNS noIP, configuraçao de travis(ci) 
+criaçao de chaves SSH, configuraçao de proxy em NGINX, geraçao do certificado SSL - usando let's encrypt, instalaçao de nvm e node na maquina de produçao, configuraçao DNS noIP, configuraçao de travis(ci)
 
 16/10/2017 - encontro
 configuraçao de travis(ci), modelagem UML de MVP para BD - diagrama de objetos, pontuaçao de historias de usuario, divisao das historias de usuario em pilhas.
+
+06/11/2017
+arrumando erros de testes

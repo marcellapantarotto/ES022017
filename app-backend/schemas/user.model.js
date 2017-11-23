@@ -3,8 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var Game = require('./game.model');
-
+// var Game = require('./game.model');
 // var imgPath = '/path/image.png';
 
 var UserSchema = new Schema({

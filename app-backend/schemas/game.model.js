@@ -8,7 +8,11 @@ var Schema = mongoose.Schema;
 
 var GameSchema = new Schema({
 	// id: Schema.Types.ObjectId,
-	title: String,
+	title:{
+		type: String,
+		required: true,			// obrigatory field
+		unique: true			// each username has to be unique
+	},
 	launch: {
 		type: Date,
 		default: Date.now
@@ -19,7 +23,7 @@ var GameSchema = new Schema({
 	},
 	details: {
 		creator: String,
-		platform: String,
+		console: String,
 		opSys: String,
 		processor: String,
 		ram: String,
