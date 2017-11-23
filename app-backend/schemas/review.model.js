@@ -5,18 +5,16 @@ var Schema = mongoose.Schema;
 
 var ReviewSchema = new Schema({
 	// id: Schema.Types.ObjectId,
-	content: String,
+	content: {
+		type: String,
+		required: true			// obrigatory field
+		// unique: true			// each username has to be unique
+	},
 	user: {
 		// type: String,
 		type: Schema.Types.ObjectId,
 		ref: 'User'
 	},
-	/*
-	user: {
-		type: Schema.ObjectId,
-		ref: 'User'
-	}
-	*/
 	date:{
 		type: Date,
 		default: Date.now
@@ -26,7 +24,7 @@ var ReviewSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'Game'
 	},
-	votes: Int
+	votes: Number
 })
 
 module.exports = mongoose.model('Review', ReviewSchema);
