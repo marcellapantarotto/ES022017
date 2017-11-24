@@ -7,12 +7,12 @@
     <div class="container">
       <form>
         <div class="form-group">
-          <label for="exampleInputEmail1">Username</label>
+          <label id="info" for="exampleInputEmail1">Username</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
 
         <div class="form-group">
-          <label for="exampleInputPassword1">Senha</label>
+          <label id="info" for="exampleInputPassword1">Senha</label>
           <input type="password" class="form-control" id="exampleInputPassword1">
         </div>
 
@@ -25,8 +25,8 @@
           </label>
         </div>
 
-        <button type="submit" class="btn btn-primary">Login</button>
-        <button id=semCadastro class="btn btn-primary" [routerLink]="['/register']">Não Sou Cadastrado</button>
+        <button id="info" type="submit" class="btn btn-primary">Login</button>
+        <button id="registrar"  class="btn btn-primary" [routerLink]="['/register']">Registrar</button>
       </form>
   </div>
 
