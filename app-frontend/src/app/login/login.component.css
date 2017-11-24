@@ -3,13 +3,13 @@ h1{
    margin-top:70px
 }
 
-#registrar{
+#cadastro{
   font-size: 1.5rem;
   background-color: green;
   border-color: green;
 }
 
-#registrar:hover{
+#cadastro:hover{
   background-color: #006600;
   border-color: #006600;
 }
@@ -23,4 +23,8 @@ h1{
 
 #info{
   font-size: 1.5rem;
+}
+
+button{
+  margin: 1%;
 }
