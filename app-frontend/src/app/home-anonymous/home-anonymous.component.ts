@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home-anonymous.component.html'
 })
 export class HomeAnonymousComponent implements OnInit {
+  title = 'HeadShot';
 
   constructor() { }
 
