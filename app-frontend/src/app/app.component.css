@@ -1,30 +1,14 @@
-body {
-  padding-top: 5rem;
-}
 .starter-template {
   padding: 3rem 1.5rem;
   text-align: center;
 }
 
-.card-principal {
-	float: left;
-	border:1px solid black;
-}
-
-.card{
-	border:1px solid black;
-	float: right;
-}
 .pagination{
 	float: right;
 }
 
 .form-control{
 	width: 500px;
-}
-
-#semCadastro{
-	background-color: red;
 }
 
 #descricao{
