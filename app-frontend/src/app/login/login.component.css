@@ -1,0 +1,16 @@
+h1{
+   text-align:center;
+   margin-top:70px
+}
+
+#semCadastro{
+	background-color: red;
+  border-color: red;
+}
+
+.content{
+  padding: 2%;
+  display: block;
+  margin:auto;
+  width: 50%;
+}
