@@ -25,3 +25,15 @@ h1{
 .col-colapse{
   float: right;
 }
+
+#login{
+  font-size: 1.5rem;
+}
+
+#font{
+  font-size: 1.2rem;
+}
+
+p{
+  font-size: 1.5rem;
+}
