@@ -26,7 +26,18 @@ h1{
   float: right;
 }
 
-#login{
+#cadastro{
+  font-size: 1.5rem;
+  background-color: green;
+  border-color: green;
+  display: block;
+  margin:auto;
+  width: 70%;
+}
+
+#cadastro:hover{
+  background-color: #006600;
+  border-color: #006600;
   font-size: 1.5rem;
 }
 
