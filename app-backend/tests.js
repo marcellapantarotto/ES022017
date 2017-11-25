@@ -1,45 +1,5 @@
 'use strict';
 
-describe('Testing routes', function () {
-  const request = require('supertest');
-  // const chai = require('chai');
-  // const mongoose = require('mongoose');
-
-  // var expect = chai.expect;
-  // var assert = chai.assert;
-  // chai.should();
-  var server;
-
-  beforeEach(function () {
-    server = require('./index');
-  });
-
-  afterEach(function () {
-    server.close();
-  });
-
-  it('responds to /', function testSlash(done) {
-  request(server)
-    .get('/')
-    .expect('Nothing here yet!\n\n')
-    .expect(200, done);
-  });
-
-  // it('Tests user creation.', function testUserCreation(done){
-  //   request(server)
-  //   .post('/createuser')
-  //   .send({
-  //     username: "TestUser",
-  //     name: "Usuario fulano de tal"
-  //   })
-  // });
-
-  it('404 everything else', function testPath(done){
-      request(server)
-        .get('/foo/bar')
-        .expect(404, done);
-    });
-});
 
 describe('Testing models', function(){
   var mongoose = require('mongoose');
@@ -49,6 +9,7 @@ describe('Testing models', function(){
   var MongoInMemory = require('mongo-in-memory');
   var mongoUri;
   var mongo;
+  var db;
 
   var Test = require('./schemas/test.model');
   var User = require('./schemas/user.model');
@@ -61,14 +22,14 @@ describe('Testing models', function(){
   mongoose.Promise = global.Promise;
 
   beforeEach(function(done){
-    var mongoTestPort = 8000;
+    var mongoTestPort = 7777;
     mongo = new MongoInMemory(mongoTestPort);
     mongo.start(function(error, config){
       if(error){
         console.error(error);
       }else{
         mongoUri = mongo.getMongouri("headshot");
-        mongoose.connect(mongoUri, {useMongoClient: true});
+        db = mongoose.connect(mongoUri, {useMongoClient: true});
         done();
       }
     });
@@ -226,6 +187,139 @@ describe('Testing models', function(){
       _id: id
     }, function(err){
       if(err) console.error(err);
+      done();
+    });
+  });
+});
+
+describe('Testing routes', function () {
+  var chai = require('chai');
+  var chaiHttp = require('chai-http');
+  var MongoInMemory = require('mongo-in-memory');
+  var mongoUri;
+  var mongo;
+
+  var expect = chai.expect;
+  var assert = chai.assert;
+  var should = chai.should();
+  var server;
+  var User = require('./schemas/user.model');
+  chai.use(chaiHttp);
+
+  beforeEach(function(done){
+    var mongoTestPort = 8888;
+    mongo = new MongoInMemory(mongoTestPort);
+    mongo.start(function(error, config){
+      if(error){
+        console.error(error);
+      }else{
+        mongoUri = mongo.getMongouri("headshot");
+        server = require('./index');
+        done();
+      }
+    });
+  });
+
+  afterEach(function(done){
+    server.close();
+    mongo.stop(function(error){
+      if(error){
+        console.error(error);
+      }
+      done();
+    });
+  });
+
+  it('responds to /', function testSlash(done) {
+    chai.request(server)
+    .get('/')
+    .end(function(err, res){
+      assert(res, 'Nothing here yet!\n\n');
+      res.should.have.status(200);
+      done();
+    });
+  });
+
+  it('Tests user creation(get).', function testUserCreation(done){
+    chai.request(server)
+    .post('/createuser')
+    .send({
+      username: "testuser",
+      name: "Fulano de Tal"
+    })
+    .end(function(err, res){
+      res.should.have.status(200);
+      res.body.should.be.a('Object');
+      done();
+    });
+  });
+
+  it('Tests user retrieval(get)', function testsUserRetrieval(done){
+    var testUser = new User({
+      username: "TestUser",
+      admin: true,
+      name: "Usuario fulano de tal",
+      img: new Buffer("test")
+    });
+    testUser.save(function(err, doc){
+      assert.isNotOk(err);
+      chai.request(server)
+      .get('/user/' + doc._id)
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.body.should.be.a('Object');
+        done();
+      });
+    });
+  });
+
+  it('Tests user update(put)', function testsUserUpdate(done){
+    var testUser = new User({
+      username: "TestUser",
+      admin: true,
+      name: "Usuario fulano de tal",
+      img: new Buffer("test")
+    });
+    testUser.save(function(err, doc){
+      assert.isNotOk(err);
+      chai.request(server)
+        .put('/user/' + doc._id)
+        .send({username: "NewUserName"})
+        .end(function(err, res){
+          res.should.have.status(200);
+          res.body.should.be.a('Object');
+          User.findOne({_id : doc._id}, function(err, newDoc){
+            assert.isNotOk(err);
+            assert.equal(newDoc.username, "NewUserName");
+            done();
+          });
+        });
+    });
+  });
+
+  it('Tests user removal(delete)', function testsUserRemoval(done){
+    var testUser = new User({
+      username: "TestUser",
+      admin: true,
+      name: "Usuario qualquer",
+      img: new Buffer("test")
+    });
+    testUser.save(function(err, doc){
+      assert.isNotOk(err);
+      chai.request(server)
+      .delete('/user/' + doc._id)
+      .end(function(err, res){
+        res.should.have.status(200);
+        done();
+      });
+    });
+  });
+
+  it('404 everything else', function testPath(done) {
+    chai.request(server)
+    .get('/foo/bar')
+    .end(function(err, res){
+      res.should.have.status(404);
       done();
     });
   });

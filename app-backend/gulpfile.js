@@ -6,7 +6,8 @@ var node;
 var mongoServerInstance;
 
 gulp.task('startMongoInMemory', ['stopMongoInMemory'], function() {
-  mongoServerInstance = new MongoInMemory(); //DEFAULT PORT is 27017
+  var mongoDevPort = 27017;
+  mongoServerInstance = new MongoInMemory(mongoDevPort); //DEFAULT PORT is 27017
   mongoServerInstance.start(function(error, config){
       if(error){
           console.error(error);
