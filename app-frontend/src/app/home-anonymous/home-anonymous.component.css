@@ -1,7 +1,3 @@
-body {
-  padding-top: 5rem;
-}
-
 .content{
    margin-top:30px;
 }
@@ -11,19 +7,8 @@ h1{
    font-size: 4rem;
 }
 
-.row{
-  margin:10px;
-  border: 1px;
-  border-color: black;
-}
-
 .col{
   margin-left:20px;
-  float: right;
-}
-
-.col-colapse{
-  float: right;
 }
 
 #cadastro{
