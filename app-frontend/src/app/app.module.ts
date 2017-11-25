@@ -9,17 +9,19 @@ import {ROUTES} from './app.routes'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { HomeAnonymousComponent } from './home-anonymous/home-anonymous.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { HomeUserComponent } from './home-user/home-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeAnonymousComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    HomeUserComponent
   ],
   imports: [
     BrowserModule,
@@ -30,4 +32,5 @@ import { RegisterComponent } from './register/register.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
