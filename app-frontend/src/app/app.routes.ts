@@ -5,12 +5,13 @@ import {LoginComponent} from './login/login.component'
 import {RegisterComponent} from './register/register.component'
 import {HomeUserComponent} from './home-user/home-user.component'
 import {HomeAdminComponent} from './home-admin/home-admin.component'
-
+import {AddGameComponent} from './add-game/add-game.component'
 
 export const ROUTES: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'home-user', component: HomeUserComponent},
-  {path: 'home-admin', component: HomeAdminComponent}
+  {path: 'home-admin', component: HomeAdminComponent},
+  {path: 'add-game', component: AddGameComponent}
 ]

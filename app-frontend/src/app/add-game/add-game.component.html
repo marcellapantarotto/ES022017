@@ -1,0 +1,47 @@
+<body>
+  <section class="content-header" style="margin-top:70px">
+    <h1>Adicionar Jogo</h1>
+  </section>
+
+  <section class="content">
+    <div class="container">
+
+      <form>
+        <div class="form-group">
+          <label id="info" for="exampleInputEmail1">Nome do jogo:</label>
+          <input type="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group">
+          <label id="info" for="exampleInputPassword1">Criador:</label>
+          <input type="description" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <div class="form-group">
+          <label id="info" for="exampleInputPassword1">Ano:</label>
+          <input type="description" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <div class="form-group">
+          <label id="info" for="exampleInputPassword1">Plataforma:</label>
+          <input type="description" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <div class="form-group">
+          <label id="info" for="exampleInputPassword1">Descrição do Jogo:</label>
+          <input id="descricao" type="description" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label id="info" for="exampleFormControlFile1">Foto:</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+
+        <button id="info" type="submit" class="btn btn-primary" [routerLink]="['/home-admin']">Adicionar</button>
+        <button id="cancelar" class="btn btn-primary" [routerLink]="['/home-admin']">Cancelar</button>
+
+      </form>
+
+    </div>
+  </section>
+</body>
