@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AddGameComponent } from './add-game/add-game.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddGameComponent } from './add-game/add-game.component';
     HomeComponent,
     HomeUserComponent,
     HomeAdminComponent,
-    AddGameComponent
+    AddGameComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
