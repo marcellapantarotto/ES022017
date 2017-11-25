@@ -16,6 +16,7 @@ import { HomeUserComponent } from './home-user/home-user.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { DeleteProfileComponent } from './delete-profile/delete-profile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     HomeUserComponent,
     HomeAdminComponent,
     AddGameComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    DeleteProfileComponent
   ],
   imports: [
     BrowserModule,
