@@ -242,7 +242,7 @@ describe('Testing routes', function () {
 
   it('Tests user creation(get).', function testUserCreation(done){
     chai.request(server)
-    .post('/createuser')
+    .post('/user')
     .send({
       username: "testuser",
       name: "Fulano de Tal"

@@ -19,7 +19,7 @@ if(process.env.NODE_ENV == "production"){
   BACKEND_API_URL = 'http://' + BACKEND_API_DNS + ':' + BACKEND_API_PORT;
   BACKEND_API_IP_BIND = '127.0.0.1'
 }else{
-  MONGO_URL = 'mongodb://127.0.0.1:27017/headshot';
+  MONGO_URL = 'mongodb://headshot:headshot@127.0.0.1:27017/headshot';
   BACKEND_API_PORT = 3000;
   BACKEND_API_DNS = 'localhost';
   BACKEND_API_URL = 'http://' + BACKEND_API_DNS + ':' + BACKEND_API_PORT;
