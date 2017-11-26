@@ -3,7 +3,7 @@
 var User = require('../schemas/user.model');
 
 module.exports = function(app){
-    app.post('/createuser', function(req, res){
+    app.post('/user', function(req, res){
         var user = new User({
             username: req.body.username,
             name: req.body.name
