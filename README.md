@@ -25,18 +25,23 @@ Moderador adicionará todos os jogos, mas usuários podem sugerir adição de no
 ### Tarefa
 
 Procurar e filtrar games
+
 Informar-se sobre o jogo
 
 ### Dor
 
 Decidir entre vários jogos
+
 Risco de comprar um jogo não adequado a seu perfil
 
 ### Ganho
 
 Possuir maior segurança ao adquirir um game
+
 Desperdiçar menos dinheiro com games que não iriam ser jogados
+
 Social
+
 Conhecer pessoas com interesses em video games similares
 
 ## Histórias de usuário
@@ -55,7 +60,7 @@ Os protótipos Lo-Fi se encontram no link: https://github.com/marcellapantarotto
 
 Os storyboards se encontram no link: https://github.com/marcellapantarotto/ES022017/tree/master/Storyboarding
 
-##Arquitetura
+## Arquitetura
 
 O sistema deverá ser capaz de criar, editar, remover e buscar jogos e usuários.
 Não foi necessária a escolha de um banco de dados(Mongoose) com demasiada robustez, pois, no máximo, nos preocuparemos com a recuperação do sistema após falta de energia ou reinicialização após atualizações e/ou erros, expansível e facilmente modificável, requisitos mínimos de hardware são baixos devido a interface leve e as requisições serem do tipo Http.
