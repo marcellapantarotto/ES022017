@@ -8,6 +8,52 @@
 
 Engenharia de Software UnB 2/2017
 
+## Stakeholders
+
+Administradores
+Desenvolvedores
+Usuários cadastrados
+Usuários anônimos
+
+## Descrição do problema
+
+Nosso cliente é um gamer de faixa etária entre 15 a 35 anos. Alguém disposto a gastar conscientemente e especificamente com video games, necessitando então de um filtro para encontrar jogos virtuais de seu interesse dada a grande variedade disponível no mercado.
+
+### Tarefa
+
+Procurar e filtrar games.
+Se informar sobre o jogo.
+
+### Dor
+
+Decidir entre vários jogos.
+Risco de comprar um jogo não adequado a seu perfil.
+
+### Ganho
+
+Possuir maior segurança ao adquirir um game.
+Desperdiçar menos dinheiro com games que não iriam ser jogados.
+Social.
+Conhecer pessoas com interesses em video games similares.
+
+	Cada jogo terá uma pequena descrição sobre este, possibilidade de link para a página do jogo.
+	Moderador adicionará todos os jogos, mas usuários podem sugerir adição de novos jogos.
+
+## Histórias de usuário
+
+As histórias se encontram no link: https://github.com/marcellapantarotto/ES022017/blob/master/historias_usuarios_ES.txt
+
+## Cenários
+
+Os cenários se encontram no link: https://github.com/marcellapantarotto/ES022017/blob/master/cenarios.txt
+
+## Protótipos Lo-Fi
+
+Os protótipos Lo-Fi se encontram no link: https://github.com/marcellapantarotto/ES022017/tree/master/LO_FI
+
+## Storyboards
+
+Os storyboards se encontram no link: https://github.com/marcellapantarotto/ES022017/tree/master/Storyboarding
 
 ## Pré Requisitos de Instalação
 ### Instalação Backend:
