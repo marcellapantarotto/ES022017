@@ -24,23 +24,25 @@ Moderador adicionará todos os jogos, mas usuários podem sugerir adição de no
 
 ### Tarefa
 
-1.Procurar e filtrar games.
-2.Se informar sobre o jogo.
+Procurar e filtrar games
+
+Se informar sobre o jogo
 
 ### Dor
 
-1.Decidir entre vários jogos.
-2.Risco de comprar um jogo não adequado a seu perfil.
+Decidir entre vários jogos
+
+Risco de comprar um jogo não adequado a seu perfil
 
 ### Ganho
 
-1.Possuir maior segurança ao adquirir um game.
-2.Desperdiçar menos dinheiro com games que não iriam ser jogados.
-3.Social.
-4.Conhecer pessoas com interesses em video games similares.
+Possuir maior segurança ao adquirir um game
 
-Cada jogo terá uma pequena descrição sobre este, possibilidade de link para a página do jogo.
-Moderador adicionará todos os jogos, mas usuários podem sugerir adição de novos jogos.
+Desperdiçar menos dinheiro com games que não iriam ser jogados
+
+Social
+
+Conhecer pessoas com interesses em video games similares
 
 ## Histórias de usuário
 
