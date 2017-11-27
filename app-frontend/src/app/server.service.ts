@@ -16,7 +16,7 @@ export  class ServerService{
         (response: Response) => {
           const data = response.json();
           for (const server of data) {
-            server.name = 'Fetched_' + server.name;
+            server.name = 'ID' + server.id;
           }
           return data;
         }
