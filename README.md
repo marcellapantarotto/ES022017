@@ -66,6 +66,10 @@ O sistema deverá ser capaz de criar, editar, remover e buscar jogos e usuários
 Não foi necessária a escolha de um banco de dados(Mongoose) com demasiada robustez, pois, no máximo, nos preocuparemos com a recuperação do sistema após falta de energia ou reinicialização após atualizações e/ou erros, expansível e facilmente modificável, requisitos mínimos de hardware são baixos devido a interface leve e as requisições serem do tipo Http.
 A comunicação entre o Frontend e o Backend é feita por requisições Http por meio do modelo Cliente-Servidor, dentro do Frontend, há um servidor estático sendo servido pela engine nginx por meio de proxy reverso, servindo de forma estática os arquivos do Frontend que estão sendo executados pelo navegador do cliente.
 
+## Matriz de Rastreabilidade
+
+A matriz de rastreabilidade se encontra no link: https://github.com/marcellapantarotto/ES022017/blob/TestesAngular/Matriz%20de%20Rastreabilidade.txt
+
 ## Pré Requisitos de Instalação
 ### Instalação Backend:
 
