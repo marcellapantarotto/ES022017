@@ -7,8 +7,7 @@
 
 # ES022017
 
-Disciplina de Engenharia de Software d
-a UnB 2/2017
+Disciplina de Engenharia de Software - Universidade de Brasília 2º semestre de 2017.
 
 ## Stakeholders
 Em nosso projeto detectamos que as pessoas que estariam envolvidas e interessados no mesmo seriam: <br>
