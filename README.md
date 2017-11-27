@@ -4,61 +4,51 @@
 [![Github All Releases](https://img.shields.io/github/downloads/marcellapantarotto/ES022017/total.svg)]()
 [![GitHub tag](https://img.shields.io/github/tag/marcellapantarotto/ES022017.svg)]()
 [![GitHub last commit](https://img.shields.io/github/last-commit/marcellapantarotto/ES022017.svg)]()
+
 # ES022017
 
-Engenharia de Software UnB 2/2017
+Disciplina de Engenharia de Software d
+a UnB 2/2017
 
 ## Stakeholders
+Em nosso projeto detectamos que as pessoas que estariam envolvidas e interessados no mesmo seriam: <br>
+- Administradores <br>
+- Desenvolvedores <br>
+- Usuários Cadastrados <br>
+- Usuários Anônimos (ou Visitantes)
 
-Administradores
-Desenvolvedores
-Usuários cadastrados
-Usuários anônimos
+## Descrição do Problema
+Nosso cliente é um gamer (jogador), de faixa etária entre os 15 a 35 anos. Alguém que goste muito de jogar e esteja disposto a gastar, conscientemente e especificamente, com video games. Por isso há a necessidade de um ambiente de pesquisa sobre os mesmos, onde possa haver um filtro para encontrar jogos eletrônicos que melhor se encaixem ao seu interesse. Devido ao fato de a cada dia lançarem mais e mais jogos, queremos auxiliar esse gamers a entenderem a grande variedade de jogos que se encontram disponíveis no mercado. Dessa forma, nossos usuários conseguirão gastar seu dinheiro de forma eficiênte ao seu propósito estabelecido.
 
-## Descrição do problema
+## Software
+Desenvolvemos nosso projeto para que qualquer pessoa que acesse a plataforma, consiga visualizar os reviews, ou avaliações, dos jogos. Cada jogo tem uma pequena descrição sobre o mesmo, com um link para visualizar os comentarios e avaliações que foram feitos sobre ele. Para conseguir escrever um comentário ou fazer uma avaliaçar, o usuário terá que fazer um cadastro no sistema. O administrador adicionará todos os jogos, mas usuários podem sugerir a adição de novos jogos.<br>
+Elencamos abaixo as tarefas, dores e ganhos dos nosso usuários:
 
-Nosso cliente é um gamer de faixa etária entre 15 a 35 anos. Alguém disposto a gastar conscientemente e especificamente com video games, necessitando então de um filtro para encontrar jogos virtuais de seu interesse dada a grande variedade disponível no mercado
+### Tarefas:
+- Procurar e filtrar games
+- Informar-se sobre o jogo
 
-Cada jogo terá uma pequena descrição sobre este, possibilidade de link para a página do jogo
-Moderador adicionará todos os jogos, mas usuários podem sugerir adição de novos jogos
+### Dores:
+- Decidir entre vários jogos
+- Risco de comprar um jogo não adequado a seu perfil
 
-### Tarefa
+### Ganhos:
+- Possuir maior segurança ao adquirir um game
+- Desperdiçar menos dinheiro com games que não iriam ser jogados
+- Social
+- Conhecer pessoas com interesses em video games similares
 
-Procurar e filtrar games
-
-Informar-se sobre o jogo
-
-### Dor
-
-Decidir entre vários jogos
-
-Risco de comprar um jogo não adequado a seu perfil
-
-### Ganho
-
-Possuir maior segurança ao adquirir um game
-
-Desperdiçar menos dinheiro com games que não iriam ser jogados
-
-Social
-
-Conhecer pessoas com interesses em video games similares
-
-## Histórias de usuário
-
-As histórias se encontram no link: https://github.com/marcellapantarotto/ES022017/blob/master/historias_usuarios_ES.txt
+## Histórias de Usuário
+Ao total, escrevemos 21 histórias de usuário, para descrever todas as ações que possam ser realizadas pelos nossos stakeholdes. Para visualiazá-las, acessar o arquivo disponibilizados pelo link abaixo: https://github.com/marcellapantarotto/ES022017/blob/master/historias_usuarios_ES.txt
 
 ## Cenários
-
-Os cenários se encontram no link: https://github.com/marcellapantarotto/ES022017/blob/master/cenarios.txt
+Para demosntrar os caminhos que os stakeholders podem fazer dentro do nosso sistema, escrevemos 20 cenários, que podem ser lidos, dentro do arquivo, no seguinte link: https://github.com/marcellapantarotto/ES022017/blob/master/cenarios.txt
 
 ## Protótipos Lo-Fi
-
-Os protótipos Lo-Fi se encontram no link: https://github.com/marcellapantarotto/ES022017/tree/master/LO_FI
+Para termos uma ideia de como faríamos o layout do sistema, desenvolvemos 12 protótipos de lo-fi. Porém, durante o desenvolvimento, percebemos que alguns elementos que colocamos nos protótipos se encontravam irrelevantes nas páginas. No link abaixo disponibiliamos imagens, referentes a casa protótipo: https://github.com/marcellapantarotto/ES022017/tree/master/LO_FI
 
 ## Storyboards
-
-Os storyboards se encontram no link: https://github.com/marcellapantarotto/ES022017/tree/master/Storyboarding
+Para haver uma visão geral sobre a usabilidade do layout e suas conexões, desenvolvemos um storyboard para o administrador e outro para o usuário, que se encontram no seguinte link: https://github.com/marcellapantarotto/ES022017/tree/master/Storyboarding
 
 ## Arquitetura
 
