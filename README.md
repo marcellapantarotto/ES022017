@@ -20,29 +20,23 @@ Usuários anônimos
 Nosso cliente é um gamer de faixa etária entre 15 a 35 anos. Alguém disposto a gastar conscientemente e especificamente com video games, necessitando então de um filtro para encontrar jogos virtuais de seu interesse dada a grande variedade disponível no mercado
 
 Cada jogo terá uma pequena descrição sobre este, possibilidade de link para a página do jogo
-
 Moderador adicionará todos os jogos, mas usuários podem sugerir adição de novos jogos
 
 ### Tarefa
 
 Procurar e filtrar games
-
 Informar-se sobre o jogo
 
 ### Dor
 
 Decidir entre vários jogos
-
 Risco de comprar um jogo não adequado a seu perfil
 
 ### Ganho
 
 Possuir maior segurança ao adquirir um game
-
 Desperdiçar menos dinheiro com games que não iriam ser jogados
-
 Social
-
 Conhecer pessoas com interesses em video games similares
 
 ## Histórias de usuário
@@ -60,6 +54,12 @@ Os protótipos Lo-Fi se encontram no link: https://github.com/marcellapantarotto
 ## Storyboards
 
 Os storyboards se encontram no link: https://github.com/marcellapantarotto/ES022017/tree/master/Storyboarding
+
+##Arquitetura
+
+O sistema deverá ser capaz de criar, editar, remover e buscar jogos e usuários.
+Não foi necessária a escolha de um banco de dados(Mongoose) com demasiada robustez, pois, no máximo, nos preocuparemos com a recuperação do sistema após falta de energia ou reinicialização após atualizações e/ou erros, expansível e facilmente modificável, requisitos mínimos de hardware são baixos devido a interface leve e as requisições serem do tipo Http.
+A comunicação entre o Frontend e o Backend é feita por requisições Http por meio do modelo Cliente-Servidor, dentro do Frontend, há um servidor estático sendo servido pela engine nginx por meio de proxy reverso, servindo de forma estática os arquivos do Frontend que estão sendo executados pelo navegador do cliente.
 
 ## Pré Requisitos de Instalação
 ### Instalação Backend:
