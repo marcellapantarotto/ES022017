@@ -235,13 +235,22 @@ describe('Testing routes', function () {
     chai.request(server)
     .get('/')
     .end(function(err, res){
-      assert(res, 'Nothing here yet!\n\n');
+      assert(res, 'Headshot API!\n\n');
       res.should.have.status(200);
       done();
     });
   });
 
-  it('Tests user creation(get).', function testUserCreation(done){
+  it('404 everything else', function testPath(done) {
+    chai.request(server)
+    .get('/foo/bar')
+    .end(function(err, res){
+      res.should.have.status(404);
+      done();
+    });
+  });
+
+  it('Tests user creation(post).', function testUserCreation(done){
     chai.request(server)
     .post('/user')
     .send({
@@ -254,7 +263,7 @@ describe('Testing routes', function () {
       done();
     });
   });
-
+  
   it('Tests user retrieval(get)', function testsUserRetrieval(done){
     var testUser = new User({
       username: "TestUser",
@@ -273,7 +282,7 @@ describe('Testing routes', function () {
       });
     });
   });
-
+  
   it('Tests user update(put)', function testsUserUpdate(done){
     var testUser = new User({
       username: "TestUser",
@@ -316,11 +325,17 @@ describe('Testing routes', function () {
     });
   });
 
-  it('404 everything else', function testPath(done) {
+
+  it('Tests user creation(post).', function testUserCreation(done){
     chai.request(server)
-    .get('/foo/bar')
+    .post('/user')
+    .send({
+      username: "testuser",
+      name: "Fulano de Tal"
+    })
     .end(function(err, res){
-      res.should.have.status(404);
+      res.should.have.status(200);
+      res.body.should.be.a('Object');
       done();
     });
   });
