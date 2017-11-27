@@ -17,31 +17,26 @@ Usuários anônimos
 
 ## Descrição do problema
 
-Nosso cliente é um gamer de faixa etária entre 15 a 35 anos. Alguém disposto a gastar conscientemente e especificamente com video games, necessitando então de um filtro para encontrar jogos virtuais de seu interesse dada a grande variedade disponível no mercado.
+Nosso cliente é um gamer de faixa etária entre 15 a 35 anos. Alguém disposto a gastar conscientemente e especificamente com video games, necessitando então de um filtro para encontrar jogos virtuais de seu interesse dada a grande variedade disponível no mercado
 
-Cada jogo terá uma pequena descrição sobre este, possibilidade de link para a página do jogo.
-Moderador adicionará todos os jogos, mas usuários podem sugerir adição de novos jogos.
+Cada jogo terá uma pequena descrição sobre este, possibilidade de link para a página do jogo
+Moderador adicionará todos os jogos, mas usuários podem sugerir adição de novos jogos
 
 ### Tarefa
 
 Procurar e filtrar games
-
-Se informar sobre o jogo
+Informar-se sobre o jogo
 
 ### Dor
 
 Decidir entre vários jogos
-
 Risco de comprar um jogo não adequado a seu perfil
 
 ### Ganho
 
 Possuir maior segurança ao adquirir um game
-
 Desperdiçar menos dinheiro com games que não iriam ser jogados
-
 Social
-
 Conhecer pessoas com interesses em video games similares
 
 ## Histórias de usuário
