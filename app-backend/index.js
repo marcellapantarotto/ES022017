@@ -41,7 +41,7 @@ require('./routes/user')(app);
 require('./routes/review')(app);
 
 app.get('/', function (req, res) {
-  var response = 'Nothing here yet!\n\n';
+  var response = 'Headshot API!\n\n';
   res.status(200).send(response);
 });
 
