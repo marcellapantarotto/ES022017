@@ -41,3 +41,12 @@ configuraçao de travis(ci), modelagem UML de MVP para BD - diagrama de objetos,
 
 06/11/2017
 arrumando erros de testes
+
+15/11/2017
+configurações backend, Angular
+
+20/11/2017
+Estudos Angular, Bootstrap, configurações
+
+22/11/2017 
+Arrumando frontend, CRUD funcionando e testes
