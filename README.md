@@ -70,6 +70,10 @@ A comunicação entre o Frontend e o Backend é feita por requisições Http por
 
 A matriz de rastreabilidade se encontra no link: https://github.com/marcellapantarotto/ES022017/blob/TestesAngular/Matriz%20de%20Rastreabilidade.txt
 
+## Interações
+
+Interações se encontram no link: https://github.com/marcellapantarotto/ES022017/blob/master/iteracoes.txt
+
 ## Pré Requisitos de Instalação
 ### Instalação Backend:
 
