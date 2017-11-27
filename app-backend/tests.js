@@ -204,6 +204,7 @@ describe('Testing routes', function () {
   var should = chai.should();
   var server;
   var User = require('./schemas/user.model');
+  var Review = require('./schemas/review.model');
   chai.use(chaiHttp);
 
   beforeEach(function(done){

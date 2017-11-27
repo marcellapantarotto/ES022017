@@ -1,0 +1,65 @@
+.content{
+   margin-top:30px;
+}
+
+.jumbotron{
+  background-color: #f0f0f0;
+  height: fix;
+}
+
+h1{
+   text-align:center;
+   font-size: 4rem;
+}
+
+.col-colapse{
+  padding-left: 2%;
+}
+
+.col{
+  margin-left:20px;
+}
+
+#cadastro{
+  font-size: 1.5rem;
+  background-color: green;
+  border-color: green;
+  display: block;
+  margin:auto;
+  width: 70%;
+}
+
+#cadastro:hover{
+  background-color: #006600;
+  border-color: #006600;
+  font-size: 1.5rem;
+}
+
+#font{
+  font-size: 1.2rem;
+}
+
+p{
+  font-size: 1.5rem;
+}
+
+#perfil{
+  padding: 2%;
+  display: block;
+  margin: auto;
+  width: 90%;
+}
+
+#bUser{
+  font-size: 1.4rem;
+  margin: 0.5rem;
+  color: green;
+  background-color: #f0f0f0;
+  border-color: green;
+}
+
+#bUser:hover{
+  color: white;
+  background-color: #006600;
+  border-color: #006600;
+}

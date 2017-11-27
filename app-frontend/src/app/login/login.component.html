@@ -1,0 +1,33 @@
+<section class="content-header">
+  <h1>Login</h1>
+</section>
+
+<section class="content">
+
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label id="info" for="exampleInputEmail1">Username</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+
+        <div class="form-group">
+          <label id="info" for="exampleInputPassword1">Senha</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <div class="form-check">
+          <label class="form-check-label">
+            <div class="row">
+                <div class="col"><input type="checkbox" class="form-check-input"></div>
+                <div class="col">Lembrar Usuário</div>
+            </div>
+          </label>
+        </div>
+
+        <button id="info" type="submit" class="btn btn-primary" [routerLink]="['/home-admin']">Login</button>
+        <button id="cadastro"  class="btn btn-primary" [routerLink]="['/register']">Fazer Cadastro</button>
+      </form>
+  </div>
+
+</section>

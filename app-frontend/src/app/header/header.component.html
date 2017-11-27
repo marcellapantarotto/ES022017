@@ -1,0 +1,28 @@
+<header class="main-header">
+
+  <nav id="font"class="navbar fixed-top navbar-expand-md navbar-dark bg-dark fixed-top ">
+    <a [routerLink]="['/']" class="navbar-brand">
+      <img src="/assets/img/sniper-155485.svg" width="30" height="30" alt="">
+      <p>HeadShot</p>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li routerLinkActive="active"><a [routerLink]="['/']" class="nav-link">Home</a></li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <input id="font" class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="text">
+        <button id="font" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <button id="font" type="button" class="btn btn-primary pull-right" style="margin-left: 0.5%" [routerLink]="['/login']">Login</button>
+
+    </div>
+  </nav>
+
+</header>

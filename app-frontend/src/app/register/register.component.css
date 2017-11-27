@@ -1,0 +1,33 @@
+h1{
+   text-align:center;
+   margin-top:70px
+}
+
+#cancelar{
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: underline;
+	background-color: #f0f0f0;
+  border: none;
+}
+
+#cancelar:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #474747;
+}
+
+.content{
+  padding: 2%;
+  display: block;
+  margin:auto;
+  width: 50%;
+}
+
+#info{
+  font-size: 1.5rem;
+}
+
+button{
+  margin: 1%;
+}

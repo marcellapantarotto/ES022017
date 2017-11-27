@@ -1,0 +1,54 @@
+<section class="content-header">
+</section>
+
+<section class="content">
+
+  <div class="jumbotron welcome-jumbotron">
+    <h1>Welcome to {{title}}!</h1>
+
+    <div class="row">
+      <div class="col-colapse">
+        <div class="card-principal" style="width: 20rem;">
+          <img class="card-img-top" src="assets/img/admin.jpeg" alt="Card image cap">
+
+          <div class="card-body">
+           <h3 id="perfil" class="card-title">Administrador</h3>
+           <p id="des" class="card-text">Descrição do perfil.</p>
+          </div>
+
+          <div class="row1"><a id="bUser" class="btn btn-primary" [routerLink]="['/edit-profile']">Editar Perfil</a></div>
+          <div class="row1"><a id="bUser" class="btn btn-primary" [routerLink]="['/add-game']">Adicionar Jogo</a></div>
+          <div class="row1"><a id="bUser" class="btn btn-primary" [routerLink]="['/delete-profile']">Excluir Usuário</a></div>
+
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card w-75">
+          <h2 class="card-header">Sugestões dos Usuários</h2>
+
+          <div class="card-body">
+           <ol>
+             <li><p class="card-text">Nome do usuário: Jogo que ele recomendou.</p>
+               <a id="font" class="btn btn-primary" [routerLink]="['/add-game']">ADICIONAR</a>
+               <a id="font" href="#" class="btn btn-primary">APAGAR</a></li>
+             <li><p class="card-text">Nome do usuário: Jogo que ele recomendou.</p>
+               <a id="font" class="btn btn-primary" [routerLink]="['/add-game']">ADICIONAR</a>
+               <a id="font" href="#" class="btn btn-primary">APAGAR</a></li>
+             <li><p class="card-text">Nome do usuário: Jogo que ele recomendou.</p>
+               <a id="font" class="btn btn-primary" [routerLink]="['/add-game']">ADICIONAR</a>
+               <a id="font" href="#" class="btn btn-primary">APAGAR</a></li>
+             <li><p class="card-text">Nome do usuário: Jogo que ele recomendou.</p>
+               <a id="font" class="btn btn-primary" [routerLink]="['/add-game']">ADICIONAR</a>
+               <a id="font" href="#" class="btn btn-primary">APAGAR</a></li>
+             <li><p class="card-text">Nome do usuário: Jogo que ele recomendou.</p>
+               <a id="font" class="btn btn-primary" [routerLink]="['/add-game']">ADICIONAR</a>
+               <a id="font" href="#" class="btn btn-primary">APAGAR</a></li>
+           </ol>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

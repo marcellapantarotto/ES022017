@@ -1,0 +1,31 @@
+h1{
+   text-align:center;
+   margin-top:70px
+}
+
+#cadastro{
+  font-size: 1.5rem;
+  background-color: green;
+  border-color: green;
+}
+
+#cadastro:hover{
+  background-color: #006600;
+  border-color: #006600;
+}
+
+.content{
+  padding: 2%;
+  display: block;
+  margin:auto;
+  width: 50%;
+
+}
+
+#info{
+  font-size: 1.5rem;
+}
+
+button{
+  margin: 1%;
+}

@@ -38,6 +38,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./routes/user')(app);
+require('./routes/review')(app);
 
 app.get('/', function (req, res) {
   var response = 'Nothing here yet!\n\n';
