@@ -20,17 +20,20 @@ Em nosso projeto detectamos que as pessoas que estariam envolvidas e interessado
 - Desenvolvedores <br>
 - Usuários Cadastrados <br>
 - Usuários Anônimos (ou Visitantes)
+- Gamers em busca de boas críticas para jogos
+- Empresas de games buscando refinar seus produtos e vender mais games.
 
 ## Descrição do Problema
-Nosso cliente é um gamer (jogador), de faixa etária entre os 15 a 35 anos. Alguém que goste muito de jogar e esteja disposto a gastar, conscientemente e especificamente, com video games. Por isso há a necessidade de um ambiente de pesquisa sobre os mesmos, onde possa haver um filtro para encontrar jogos eletrônicos que melhor se encaixem ao seu interesse. Devido ao fato de a cada dia lançarem mais e mais jogos, queremos auxiliar esse gamers a entenderem a grande variedade de jogos que se encontram disponíveis no mercado. Dessa forma, nossos usuários conseguirão gastar seu dinheiro de forma eficiênte ao seu propósito estabelecido.
+Nosso cliente principal é um gamer (jogador), de faixa etária entre os 15 a 35 anos. Alguém que goste muito de jogar e esteja disposto a gastar, conscientemente e especificamente, com video games. Por isso, há a necessidade de um ambiente de pesquisa sobre games, onde possa haver um filtro para encontrar jogos eletrônicos que melhor se encaixem ao perfil do jogador. Devido ao fato de milhares de jogos serem lançados diariamente, queremos auxiliar esse gamers a contemplarem a variedade de jogos que se encontram disponíveis no mercado. Desta forma, nossos usuários conseguirão gastar seu dinheiro de forma eficiente, segundo seu propósito.
 
 ## Software
-Desenvolvemos nosso projeto para que qualquer pessoa que acesse a plataforma, consiga visualizar os reviews, ou avaliações, dos jogos. Cada jogo tem uma pequena descrição sobre o mesmo, com um link para visualizar os comentarios e avaliações que foram feitos sobre ele. Para conseguir escrever um comentário ou fazer uma avaliaçar, o usuário terá que fazer um cadastro no sistema. O administrador adicionará todos os jogos, mas usuários podem sugerir a adição de novos jogos.<br>
+Desenvolvemos nosso projeto para que qualquer pessoa que acesse a plataforma consiga visualizar os reviews, ou avaliações, dos jogos. Cada jogo tem uma breve descrição, acompanhada de um link para visualizar os comentários e avaliações que foram feitos sobre ele. Para conseguir escrever um comentário ou fazer uma avaliaçao, o usuário terá que fazer um cadastro no sistema. O administrador adicionará todos os jogos, mas usuários podem sugerir a adição de novos jogos.<br>
 Elencamos abaixo as tarefas, dores e ganhos dos nosso usuários:
 
 ### Tarefas:
 - Procurar e filtrar games
 - Informar-se sobre o jogo
+- Revisar os games que jogarem
 
 ### Dores:
 - Decidir entre vários jogos
@@ -42,8 +45,17 @@ Elencamos abaixo as tarefas, dores e ganhos dos nosso usuários:
 - Social
 - Conhecer pessoas com interesses em video games similares
 
+## Ferramentas utilizadas
+No desenvolvimento do projeto, optamos por utilizar o MEAN stack, baseado em JavaScript.
+- MongoDB: Banco de dados NoSQL - armazena objetos de forma similar a JSON (BSON)
+- Express: Aplicação web leve
+- NodeJS: Aplicações rápidas e escaláveis
+- Angular: Framework para o client
+
+O principal motivador para o uso deste stack foi o interesse em aprender um framework que cresce em popularidade, e que pode nos ser útil no mercado de trabalho.
+
 ## Histórias de Usuário
-Ao total, escrevemos 21 histórias de usuário, para descrever todas as ações que possam ser realizadas pelos nossos stakeholdes. Para visualiazá-las, acessar o arquivo disponibilizados pelo link abaixo: https://github.com/marcellapantarotto/ES022017/blob/master/historias_usuarios_ES.txt
+Ao total, escrevemos 21 histórias de usuário para descrever todas as ações que possam ser realizadas pelos nossos stakeholders. Para visualiazá-las, acessar o arquivo disponibilizado pelo link abaixo: https://github.com/marcellapantarotto/ES022017/blob/master/historias_usuarios_ES.txt
 
 ## Cenários
 Para demosntrar os caminhos que os stakeholders podem fazer dentro do nosso sistema, escrevemos 20 cenários, que podem ser lidos, dentro do arquivo, no seguinte link: https://github.com/marcellapantarotto/ES022017/blob/master/cenarios.txt
@@ -64,9 +76,23 @@ A comunicação entre o Frontend e o Backend é feita por requisições Http por
 
 A matriz de rastreabilidade se encontra no link: https://github.com/marcellapantarotto/ES022017/blob/TestesAngular/Matriz%20de%20Rastreabilidade.txt
 
+
 ## Interações
 
 Interações se encontram no link: https://github.com/marcellapantarotto/ES022017/blob/master/iteracoes.txt
+
+## Práticas de XP
+- Programação em pares
+- Padrões de codificação
+- TDD
+- Integração continua
+
+## Decisões de projeto e spikes
+- Perda de membro do grupo - dificuldades na comunicação
+
+## Lições aprendidas
+- Não subestimar o tempo necessário para aprender um novo framework
+- Definir mais rigorosamente milestones
 
 ## Pré Requisitos de Instalação
 ### Instalação Backend:
