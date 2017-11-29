@@ -7,12 +7,8 @@
 
 # ES022017
 
-<<<<<<< HEAD
-Disciplina de Engenharia de Software d
-a UnB 2/2017
-=======
+
 Disciplina de Engenharia de Software - Universidade de Brasília 2º semestre de 2017.
->>>>>>> c1301877057e46e031fc76e85cc20d7359f44bba
 
 ## Stakeholders
 Em nosso projeto detectamos que as pessoas que estariam envolvidas e interessados no mesmo seriam: <br>
